@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\ContentImageController;
-use App\Http\Controllers\Admin\ImagUploadController;
+use App\Http\Controllers\Admin\ContentTextController;
+use App\Http\Controllers\Admin\ImageUploadController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -52,6 +53,17 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::put('{contentImage}',[ContentImageController::class,'update'])->name('content-image.update');
 
         Route::delete('',[ContentImageController::class,'destroy'])->name('content-image.destroy');
+    });
+
+    // ContentText routes
+    Route::prefix('content-text')->group(function () {
+        Route::match(['get','post'],'', [ContentTextController::class, 'index'])->name('content-text.index');
+        Route::get('create', [ContentTextController::class, 'create'])->name('content-text.create');
+        Route::post('store',[ContentTextController::class,'store'])->name('content-text.store');
+        Route::get('{contentText}/edit', [ContentTextController::class, 'edit'])->name('content-text.edit');
+        Route::put('{contentText}',[ContentTextController::class,'update'])->name('content-text.update');
+
+        Route::delete('',[ContentTextController::class,'destroy'])->name('content-text.destroy');
     });
 
 
@@ -246,5 +258,5 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 });
 
 
-Route::post('upload__file-image',[ImagUploadController::class,'uploadImage'])->name('upload_image');
+Route::post('upload__file-image',[ImageUploadController::class,'uploadImage'])->name('upload_image');
 

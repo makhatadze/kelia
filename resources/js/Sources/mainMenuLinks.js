@@ -37,14 +37,21 @@ export default function () {
         return [
             {
                 id: "contentPages",
-                label:  "contentPages",
+                label:  "Content",
                 icon: "tv",
                 link: null,
                 type: "dropdown",
                 items: [
                     {
-                        id:"contentImages",
-                        label:  "Content Images",
+                        id:"Texts",
+                        label:  "Texts",
+                        icon: null,
+                        link: "content-text.index",
+                        type: "route"
+                    },
+                    {
+                        id:"Images",
+                        label:  "Images",
                         icon: null,
                         link: "content-image.index",
                         type: "route"
