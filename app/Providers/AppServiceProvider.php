@@ -58,7 +58,7 @@ class AppServiceProvider extends ServiceProvider
                 } else {
                     return [];
                 }
-            }
+            },
         ]);
 
         Inertia::share('flash', function () {

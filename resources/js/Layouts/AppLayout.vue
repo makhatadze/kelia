@@ -137,7 +137,7 @@ export default defineComponent({
         const { t } = useI18n();
 
         /*Side Menu*/
-        const {mainMenuLinks} = MainMenuLinks(Inertia.page.props)
+        const {mainMenuLinks} = MainMenuLinks()
         const selectedLink = ref([]);
         provide('selectedLink', ref(selectedLink));
         const showMainMenu = ref(Boolean(localStorage.showMainMenu));

@@ -1,4 +1,6 @@
 const mainMenuLangTr = {
+    contentPagesPages: "content Pages",
+    contentImage: "content Image",
     authPages: "Kullanıcı Sayfaları",
     authLogin: "Giriş",
     authRegister: "Kayıt",

@@ -1,4 +1,6 @@
 const mainMenuLangEn = {
+    contentPagesPages: "content Pages",
+    contentImage: "content Image",
     authPages: "Auth Pages",
     authLogin: "Login",
     authRegister: "Register",

@@ -1,5 +1,11 @@
 <?php
-
+/**
+ *  app/Http/Requests/UpdatePermissionGroupRequest.php
+ *
+ * Date-Time: 23.01.22
+ * Time: 10:54
+ * @author Vito Makhatadze <vitomakhatadze@gmail.com>
+ */
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;

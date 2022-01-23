@@ -6,7 +6,7 @@
             :class="['flex justify-center items-center my-2 overflow-hidden',radiusStyle]"
         >
             <img v-if="files[0].type.split('/')[0] === 'image'" :class="['max-h-36 w-auto p-1 border',radiusStyle]"
-                 :src="files[0] | urlGenerator"/>
+                 :src="urlGenerator(files[0])"/>
         </div>
         <!--Input-->
         <div :class="['flex border items-center overflow-hidden',radiusStyle]">
@@ -112,8 +112,12 @@ export default {
     name: "TInputFile",
     components: {TDocumentIcon, TVideoIcon, TAudioIcon, TPaperClipIcon, TBadge, TTrashIcon, TXIcon, Button, TButton},
     mixins: [radiusSizeMixin],
+    emits: ["update:modelValue"],
     props: {
-        value: {},
+        modelValue: {
+            type: [File],
+            default: null
+        },
         multiple: {
             type: Boolean,
             default: false
@@ -131,8 +135,14 @@ export default {
     },
     data() {
         return {
+            model: this.modelValue,
             files: [],
         }
+    },
+    watch: {
+        model(value) {
+            console.log(value)
+        },
     },
     methods: {
         clearFile() {
@@ -152,13 +162,17 @@ export default {
                 this.files.push(this.$refs.input.files[x])
             }
             this.$emit('input', this.files)
-        }
+            this.$emit('update:modelValue', this.files[0])
+        },
+        urlGenerator(value) {
+            return URL.createObjectURL(value)
+        },
     },
     filters: {
         sizeCalculator(value) {
             let sizes = ["Bytes", "KB", "MB", "GB", "TB"];
             if (value === 0) return "0 Byte";
-            let i = parseInt(Math.floor(Math.log(value) / Math.log(1024)));
+            let i = parseInt(Math.floor(Math.log(value) / Math.log(122024)));
             return Math.round(value / Math.pow(1024, i), 2) + " " + sizes[i];
         },
         urlGenerator(value) {

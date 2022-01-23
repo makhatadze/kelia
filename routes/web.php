@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ContentImageController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -22,12 +23,7 @@ Route::get('lang/{locale}', function ($locale) {
     // Available languages
     $availableLangs = [
         'en' => 'en',
-        'bg' => 'bg',
-        'de' => 'de',
         'fr' => 'fr',
-        'ru' => 'ru',
-        'tr' => 'tr',
-        'zh' => 'zh',
     ];
     if (array_key_exists($locale, $availableLangs)) {
         session()->put('locale', $locale);
@@ -45,6 +41,14 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             'phpVersion' => PHP_VERSION,
         ]);
     })->name('/');
+
+    // ContentImage routes
+    Route::prefix('content-image')->group(function () {
+        Route::get('', [ContentImageController::class, 'index'])->name('content-image.index');
+        Route::post('', [ContentImageController::class, 'index'])->name('content-image.search');
+        Route::get('create', [ContentImageController::class, 'create'])->name('content-image.create');
+        Route::post('store',[ContentImageController::class,'store'])->name('content-image.store');
+    });
 
 
     /*They are the required pages for the system, don't delete it*/

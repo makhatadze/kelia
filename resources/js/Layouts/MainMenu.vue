@@ -119,7 +119,7 @@ export default defineComponent({
     emits: ["updateMainMenuStatus"],
     setup() {
         /*Menu*/
-        const {mainMenuFooterLinks} = MainMenuLinks(Inertia.page.props)
+        const {mainMenuFooterLinks} = MainMenuLinks()
 
 
         /*Injection*/

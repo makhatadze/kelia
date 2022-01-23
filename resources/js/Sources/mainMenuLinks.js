@@ -25,7 +25,7 @@ import {useI18n} from "vue-i18n";
 import {mainMenuTranslates} from "@/Lang/languages";
 import {computed} from "vue";
 
-export default function ({roles,permissions}) {
+export default function () {
 
     const {tm} = useI18n({
         inheritLocale: true,
@@ -36,13 +36,20 @@ export default function ({roles,permissions}) {
     const mainMenuLinks = computed(()=>{
         return [
             {
-                id: "externalGitHubRepo",
-                label:  tm("externalGitHubRepo"),
-                icon: "star",
-                link: "https://github.com/sinan-aydogan/anemon-laravel",
-                type: "simple-link",
-                target: "_blank",
-                visibleFor: roles.includes('Super Admin'),
+                id: "contentPages",
+                label:  "contentPages",
+                icon: "tv",
+                link: null,
+                type: "dropdown",
+                items: [
+                    {
+                        id:"contentImages",
+                        label:  "Content Images",
+                        icon: null,
+                        link: "content-image.index",
+                        type: "route"
+                    },
+                ]
             },
             {
                 id: "authPages",

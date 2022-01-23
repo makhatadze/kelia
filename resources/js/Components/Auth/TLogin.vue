@@ -17,20 +17,8 @@
                 activeDesign.header,
                 deviceType !== 'phone' && `radius-t-${activeDesign.radius ? activeDesign.radius : appConf.radius}`,
                 ]">
-                    <!--Logo-->
                     <div class="auth-logo">
-                        <slot v-if="$slots.logo" name="logo"/>
-                        <div v-else :class="authScreenConf.logoAreaClasses">
-                            <img
-                                :src="[
-                        appearingMode === 'dark' ? authScreenConf.darkLogo ? authScreenConf.darkLogo : appConf.darkLogo :
-                        authScreenConf.lightLogo ? authScreenConf.lightLogo : appConf.lightLogo
-                    ]"
-                                :class="authScreenConf.logoClasses"
-                            />
-                            <span v-text="authScreenConf.appName ? authScreenConf.appName : appConf.appName"
-                                  :class="authScreenConf.appNameClasses"></span>
-                        </div>
+                        Kelia
                     </div>
                     <!--Greeting-->
                     <div class="auth-greeting">
@@ -105,35 +93,16 @@
                                 </t-input-check-box>
                             </label>
                             <!--Forgot Password-->
-                            <Link
-                                v-if="canResetPassword"
-                                :href="route('password.request')"
-                                class="auth-forgot-password"
-                            >
-                                {{ t('forgotPassword') }}
-                            </Link>
                         </div>
                         <!--Submit Area-->
                         <div class="auth-submit-area">
-                            <!--Register Button-->
-                            <t-button
-                                :class="{ 'opacity-25': form.processing }"
-                                :design="activeDesign.registerButton[appearingMode].design"
-                                :color="activeDesign.registerButton[appearingMode].color"
-                                :link="route('register')"
-                                :radius="3"
-                                type="link"
-                            >
-                                {{ t('register') }}
-                            </t-button>
-
                             <!--Submit Button-->
                             <t-button
                                 :class="{ 'opacity-25': form.processing }"
                                 :color="activeDesign.loginButton[appearingMode].color"
                                 :design="activeDesign.loginButton[appearingMode].design"
                                 :disabled="form.processing"
-                                :radius="3" class="ml-4"
+                                :radius="3" class="w-full"
                             >
                                 {{ t('login') }}
                             </t-button>
