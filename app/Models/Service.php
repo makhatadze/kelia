@@ -28,4 +28,16 @@ class Service extends Model
     protected $fillable = [
         'title',
     ];
+
+    protected $appends = array('serviceItemList');
+
+    /**
+     * Get the image path.
+     *
+     * @return string
+     */
+    public function getServiceItemListAttribute(): string
+    {
+        return route('service-item.index',$this->id);
+    }
 }

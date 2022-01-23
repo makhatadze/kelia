@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ContentImageController;
 use App\Http\Controllers\Admin\ContentTextController;
 use App\Http\Controllers\Admin\ImageUploadController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\ServiceItemController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -56,18 +57,20 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::delete('',[ContentImageController::class,'destroy'])->name('content-image.destroy');
     });
 
-    // ContentImage routes
+    // Service routes
     Route::prefix('service')->group(function () {
         Route::match(['get','post'],'', [ServiceController::class, 'index'])->name('service.index');
         Route::get('create', [ServiceController::class, 'create'])->name('service.create');
         Route::post('store',[ServiceController::class,'store'])->name('service.store');
         Route::get('{service}/edit', [ServiceController::class, 'edit'])->name('service.edit');
         Route::put('{service}',[ServiceController::class,'update'])->name('service.update');
-
-        Route::match(['get','post'],'', [ServiceController::class, 'show'])->name('service.service-items');
-
-
         Route::delete('',[ServiceController::class,'destroy'])->name('service.destroy');
+
+
+        // Service Item
+        Route::match(['get','post'],'{service}/items', [ServiceItemController::class, 'index'])->name('service-item.index');
+        Route::get('{service}/items/create', [ServiceItemController::class, 'create'])->name('service-item.create');
+
     });
 
     // ContentText routes

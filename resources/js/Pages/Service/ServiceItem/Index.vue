@@ -8,19 +8,11 @@
             :header="header"
             content-key="data"
             unique-id="id"
-            search-route="service.index"
+            search-route="service-item.index"
         >
             <template #top-right>
-                <Link :href="route('service.create')">
+                <Link v-if="service" :href="route('service-item.create',service.id)">
                     <t-button color="green" design="light" border>+ Add New</t-button>
-                </Link>
-            </template>
-            <template #serviceItemList="{props}">
-                <Link :href="props.serviceItemList" class="inline-flex gap-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                        </svg>
-                        ServiceItems
                 </Link>
             </template>
         </t-back-end-table>
@@ -58,7 +50,7 @@
 <script>
 /*Main functions*/
 import {settingsMenuMixin} from "@/Mixins/settingsMenuMixin";
-import {reactive, ref, watch} from "vue";
+import {reactive, ref, toRefs, watch} from "vue";
 import {useForm} from "@inertiajs/inertia-vue3";
 import { Link } from '@inertiajs/inertia-vue3';
 
@@ -70,7 +62,7 @@ import TBackEndTable from "@/Components/Table/TBackEndTable";
 import {Inertia} from "@inertiajs/inertia";
 
 export default {
-    name: "ContentText",
+    name: "ServiceItemIndex",
     components: {
         TBackEndTable,
         TModal,
@@ -80,7 +72,31 @@ export default {
     },
     mixins: [settingsMenuMixin],
     props: {
+        service: {
+            type: Object,
+            default() {
+                return null
+            }
+        },
         data: {
+            type: Array,
+            default() {
+                return []
+            }
+        },
+        tags: {
+            type: Array,
+            default() {
+                return []
+            }
+        },
+        sections: {
+            type: Array,
+            default() {
+                return []
+            }
+        },
+        textTypes: {
             type: Array,
             default() {
                 return []
@@ -141,13 +157,17 @@ export default {
                 compareOperators: compareOperators
             },
             {
-                label: "Service Item",
-                key: "serviceItemList",
-                align: "right",
+                label: "Service Items",
+                key: "id",
+                align: "left",
                 status: true,
-
+                sortable: true,
+                simpleSearchable: true,
+                advancedSearchable: true,
+                advancedSearchSelectInputSource: true,
+                advancedSearchInputType: "text",
+                compareOperators: compareOperators
             },
-
         ])
 
         return {
