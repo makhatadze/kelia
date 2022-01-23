@@ -59,6 +59,13 @@ export default function () {
                 ]
             },
             {
+                id: "Service",
+                label:  "Service",
+                icon: "star",
+                link: "service.index",
+                type: "route",
+            },
+            {
                 id: "authPages",
                 label:  tm("authPages"),
                 icon: "tv",
