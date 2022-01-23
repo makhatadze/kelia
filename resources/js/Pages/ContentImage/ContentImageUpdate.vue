@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-span-6 sm:col-span-4">
                     <jet-label for="img_path" value="Image"/>
-                    <t-input-file default-value="" model-name="content-image" v-model="form.image" />
+                    <t-input-file model-name="content-image" :default-value="contentImage?.image_src" v-model="form.image" />
                     <jet-input-error :message="form.errors.image" class="mt-2"/>
                 </div>
             </template>
@@ -47,7 +47,8 @@ import JetActionMessage from '@/Jetstream/ActionMessage.vue'
 import AppLayout from "@/Layouts/AppLayout";
 import TInputSelect from "@/Components/Form/Inputs/TInputSelect";
 import TInputFile from "@/Components/Form/Inputs/TInputFile";
-import TInputGroup from "@/Components/Form/TInputGroup";
+import {responseParse} from "@/Mixins/responseParse";
+import {getData} from "@/Mixins/getData";
 
 export default defineComponent({
     components: {
@@ -59,9 +60,14 @@ export default defineComponent({
         JetLabel,
         TInputSelect,
         TInputFile,
-        TInputGroup
     },
     props: {
+        contentImage: {
+          type: Object,
+          default() {
+              return {}
+          }
+        },
         tags: {
             type: Array,
             default() {
@@ -78,19 +84,19 @@ export default defineComponent({
     data() {
         return {
             form: this.$inertia.form({
-                _method: 'POST',
-                tag: 10,
-                section: 1000,
-                image: null,
+                _method: 'PUT',
+                tag: this.contentImage?.tag ? parseInt(this.contentImage.tag) : 10,
+                section: this.contentImage?.section ? parseInt(this.contentImage.section) : 1000,
+                image: this.contentImage?.image_id,
             }),
         }
     },
     methods: {
         createContentImage() {
-            this.form.post(route('content-image.store'), {
+            this.form.post(route('content-image.update',this.contentImage.id), {
                 preserveScroll: true,
                 forceFormData: true,
-                onSuccess: () => (this.form.reset('tag','section','image')),
+                onSuccess: () => (this.form.reset('tag','section','img_path')),
             });
         },
     },

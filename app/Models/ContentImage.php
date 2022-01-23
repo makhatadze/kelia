@@ -8,22 +8,23 @@
  */
 namespace App\Models;
 
+use App\Traits\ImageAble;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 /**
  * @property integer id
  * @property integer tag
  * @property integer section
  * @property integer order
- * @property string img_path
  * @method static ContentImage findOrFail(int $service)
  * @method static paginate(int $int)
  * @method static where(string $string, mixed $data)
  */
 class ContentImage extends Model
 {
-    use HasFactory;
+    use HasFactory, ImageAble;
 
     /**
      * The attributes that are mass assignable.
@@ -31,21 +32,41 @@ class ContentImage extends Model
      * @var string[]
      */
     protected $fillable = [
-        'img_path',
         'tag',
         'section',
     ];
 
-    protected $appends = array('image');
+    protected $appends = array('image_src','image_id');
 
     /**
      * Get the image path.
      *
      * @return string
      */
-    public function getImageAttribute()
+    public function getImageSrcAttribute(): string
     {
-        $baseUrl = config('filesystems.disks.public.url');
-        return "{$baseUrl}/{$this->img_path}";
+        if ($this->image) {
+            return $this->image->full_src;
+        }
+        return '';
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getImageIdAttribute(): ?string
+    {
+        if ($this->image) {
+            return $this->image->id;
+        }
+        return null;
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
+    public function image(): MorphOne
+    {
+        return $this->morphOne(Image::class, 'imageable');
     }
 }

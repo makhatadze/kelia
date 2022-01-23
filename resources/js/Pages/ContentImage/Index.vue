@@ -1,14 +1,14 @@
 <template>
-    <app-layout title="Users">
+    <app-layout title="Content Image">
         <template #header>Content Images</template>
 
         <t-back-end-table
-            @selectedItem="selectedUser = $event.data;$event.action === 'delete' && showDeleteModal($event.data)"
+            @selectedItem="selectedItem = $event.data; actionClick($event.data, $event.action)"
             :content="contentImages"
             :header="header"
             content-key="contentImages"
             unique-id="id"
-            search-route="content-image.search"
+            search-route="content-image.index"
         >
             <template #top-right>
                 <Link :href="route('content-image.create')">
@@ -21,13 +21,13 @@
             <template #section="{props}">
                 {{ sections.find(t => t.key === Number(props.section)).label }}
             </template>
-            <template #image="{props}">
-                <img :src="props.image" alt="" class="w-8 h-8 rounded-full">
+            <template #image_src="{props}">
+                <img :src="props.image_src" alt="" class="w-8 h-8 rounded-full">
             </template>
         </t-back-end-table>
         <t-modal v-model="showModal">
             <template #header>
-                User Deleting
+                Content Image Deleting
             </template>
             <template #content>
                 <span v-html="modalContent"></span>
@@ -42,7 +42,7 @@
                 </t-button>
             </template>
             <template #footer-right>
-                <form id="delete" @submit.prevent="deleteUser">
+                <form id="delete" @submit.prevent="deleteItem">
 
                     <t-button
                         design="light"
@@ -68,6 +68,7 @@ import AppLayout from "@/Layouts/AppLayout";
 import TButton from "@/Components/Button/TButton";
 import TModal from "@/Components/Modal/TModal";
 import TBackEndTable from "@/Components/Table/TBackEndTable";
+import {Inertia} from "@inertiajs/inertia";
 
 export default {
     name: "ContentImages",
@@ -103,23 +104,31 @@ export default {
         const {tags, sections} = toRefs(props);
         const showModal = ref(false);
         const modalContent = ref(null);
-        const selectedUser = ref(null);
+        const selectedItem = ref(null);
         const form = useForm({
             id: null
         })
 
-        watch(()=>selectedUser,()=>{
+        watch(()=>selectedItem,()=>{
 
         })
 
-        const showDeleteModal = (user)=> {
-            showModal.value = true
-            modalContent.value = `You are going to delete <b> ${user.name} </b>, Are you sure ?`
+        const actionClick = (item,action)=> {
+            console.log(action)
+            switch (action) {
+                case "delete":
+                    showModal.value = true
+                    modalContent.value = `You are going to delete <b> ${item.id} </b>, Are you sure ?`
+                    break
+                case "edit":
+                    Inertia.visit(route('content-image.edit',item.id));
+            }
+
         }
 
-        const deleteUser = ()=> {
-            form.id = selectedUser.value;
-            form.delete(route('content-image.destroy', selectedUser.value), {
+        const deleteItem = ()=> {
+            form.id = selectedItem.value;
+            form.delete(route('content-image.destroy', selectedItem.value), {
                 preserveScroll: true,
                 onSuccess: () => showModal.value = false,
             })
@@ -159,7 +168,7 @@ export default {
             },
             {
                 label: "Image",
-                key: "image",
+                key: "image_src",
                 align: "center",
                 status: true,
                 sortable: false,
@@ -171,10 +180,10 @@ export default {
 
         return {
             showModal,
-            showDeleteModal,
-            deleteUser,
+            actionClick,
+            deleteItem,
             modalContent,
-            selectedUser,
+            selectedItem,
             form,
             header,
             compareOperators,

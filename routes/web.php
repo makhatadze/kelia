@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ContentImageController;
+use App\Http\Controllers\Admin\ImagUploadController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -44,10 +45,13 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     // ContentImage routes
     Route::prefix('content-image')->group(function () {
-        Route::get('', [ContentImageController::class, 'index'])->name('content-image.index');
-        Route::post('', [ContentImageController::class, 'index'])->name('content-image.search');
+        Route::match(['get','post'],'', [ContentImageController::class, 'index'])->name('content-image.index');
         Route::get('create', [ContentImageController::class, 'create'])->name('content-image.create');
         Route::post('store',[ContentImageController::class,'store'])->name('content-image.store');
+        Route::get('{contentImage}/edit', [ContentImageController::class, 'edit'])->name('content-image.edit');
+        Route::put('{contentImage}',[ContentImageController::class,'update'])->name('content-image.update');
+
+        Route::delete('',[ContentImageController::class,'destroy'])->name('content-image.destroy');
     });
 
 
@@ -195,7 +199,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::match(['get', 'post'], 'back-end-table', [\App\Http\Controllers\DemoContentController::class, 'index'])->name('back-end-table');
 
     /*TODO: Toastr Feature
-    Route::get('toastr',function (){return Inertia::render('Samples/Components/Toastr');})->name('toastr');*/
+    Route::get('toastr',function (){returned Inertia::render('Samples/Components/Toastr');})->name('toastr');*/
     Route::get('tooltip', function () {
         return Inertia::render('Samples/Components/Tooltip');
     })->name('tooltip');
@@ -242,4 +246,5 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 });
 
 
+Route::post('upload__file-image',[ImagUploadController::class,'uploadImage'])->name('upload_image');
 

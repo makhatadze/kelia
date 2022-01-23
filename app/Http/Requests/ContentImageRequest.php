@@ -32,7 +32,7 @@ class ContentImageRequest extends FormRequest
         return [
             'tag' => 'required',
             'section' => 'required',
-            'img_path' => 'required|image|mimes:jpeg,png,jpg,gif'
+            'image' => 'required|exists:images,id'
         ];
     }
 }

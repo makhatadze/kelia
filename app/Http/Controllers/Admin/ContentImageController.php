@@ -11,6 +11,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContentImageRequest;
 use App\Models\ContentImage;
+use App\Models\Image;
 use App\Models\User;
 use App\Services\ImageUploadService;
 use Illuminate\Http\Request;
@@ -70,64 +71,74 @@ class ContentImageController extends Controller
      */
     public function store(ContentImageRequest $request): \Illuminate\Http\RedirectResponse
     {
+        $imageModel = Image::findOrFail($request->input('image'));
+
         $contentImage = new ContentImage();
         $contentImage->tag = $request->input('tag');
         $contentImage->section = $request->input('section');
-        if ($request->hasFile('img_path')) {
-            $file = $request->file('img_path');
-            $fileName = $this->imageUploadService->upload($file, 'content-images');
-
-            // save image path into blog
-            $contentImage->img_path = $fileName;
-        }
-
         $contentImage->save();
+        $contentImage->image()->delete();
+
+        // save image
+        $imageModel->imageable()->associate($contentImage);
+        $imageModel->save();
 
         return redirect()->route('content-image.index')->with('message', 'Yay it worked');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *
+     * @return \Inertia\Response
      */
-    public function edit($id)
+    public function edit(ContentImage $contentImage): Response
     {
-        //
+        return Inertia::render('ContentImage/ContentImageUpdate',[
+            'contentImage' => $contentImage,
+            'tags' => getKeyValue(config('admin.other.tags')),
+            'sections' => getKeyValue(config('admin.other.sections'))
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param \App\Http\Requests\ContentImageRequest $request
+     * @param \App\Models\ContentImage $contentImage
+     *
+     * @return void
      */
-    public function update(Request $request, $id)
+    public function update(ContentImageRequest $request, ContentImage $contentImage)
     {
-        //
+        $contentImage->tag = $request->input('tag');
+        $contentImage->section = $request->input('section');
+        $contentImage->save();
+
+        if ($request->input('image') != $contentImage->image_id) {
+            $imageModel = Image::findOrFail($request->input('image'));
+            $contentImage->image()->delete();
+            // save image
+            $imageModel->imageable()->associate($contentImage);
+            $imageModel->save();
+        }
+
+        return redirect()->route('content-image.index')->with('message', 'Yay it worked');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param \App\Models\ContentImage $contentImage
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(ContentImage $contentImage): \Illuminate\Http\RedirectResponse
     {
-        //
+        $contentImage->delete();
+
+        return redirect()->route('content-image.index')->with('message', 'Yay it worked');
     }
 }
