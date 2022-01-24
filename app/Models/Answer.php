@@ -24,6 +24,8 @@ class Answer extends Model
 {
     use HasFactory, ImageAble;
 
+    protected $appends = array('image_src','image_id');
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -32,6 +34,7 @@ class Answer extends Model
     {
         return $this->belongsTo(Question::class);
     }
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

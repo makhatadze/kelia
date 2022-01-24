@@ -44,8 +44,11 @@ class Question extends Model
         'type',
     ];
 
+    protected $appends = array('image_src','image_id');
+
+
 
     public function answers(): HasMany {
-        return $this->hasMany(Answers::class, 'question_id');
+        return $this->hasMany(Answer::class, 'question_id');
     }
 }
