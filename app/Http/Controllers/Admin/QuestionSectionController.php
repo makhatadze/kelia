@@ -126,8 +126,10 @@ class QuestionSectionController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(QuestionSection $model): \Illuminate\Http\RedirectResponse
+    public function destroy(int $id): \Illuminate\Http\RedirectResponse
     {
+        $model = QuestionSection::findOrFail($id);
+
         $model->delete();
 
         return redirect()->route('question-section.index')->with('message', 'Yay it worked');

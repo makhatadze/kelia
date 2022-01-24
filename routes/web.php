@@ -82,7 +82,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get('{questionSection}/edit', [QuestionSectionController::class, 'edit'])->name('question-section.edit');
         Route::put('{questionSection}',[QuestionSectionController::class,'update'])->name('question-section.update');
 
-        Route::delete('',[QuestionSectionController::class,'destroy'])->name('question-section.destroy');
+        Route::delete('{questionSection}',[QuestionSectionController::class,'destroy'])->name('question-section.destroy');
     });
 
     // ContentText routes
