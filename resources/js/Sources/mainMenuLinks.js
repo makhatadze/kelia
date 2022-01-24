@@ -66,6 +66,13 @@ export default function () {
                 type: "route",
             },
             {
+                id: "QuestionSection",
+                label:  "Question Section",
+                icon: "question",
+                link: "question-section.index",
+                type: "route",
+            },
+            {
                 id: "authPages",
                 label:  tm("authPages"),
                 icon: "tv",

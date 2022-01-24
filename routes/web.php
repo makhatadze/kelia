@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ContentImageController;
 use App\Http\Controllers\Admin\ContentTextController;
 use App\Http\Controllers\Admin\ImageUploadController;
+use App\Http\Controllers\Admin\QuestionSectionController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ServiceItemController;
 use Illuminate\Foundation\Application;
@@ -71,6 +72,17 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::match(['get','post'],'{service}/items', [ServiceItemController::class, 'index'])->name('service-item.index');
         Route::get('{service}/items/create', [ServiceItemController::class, 'create'])->name('service-item.create');
 
+    });
+
+    // ContentImage routes
+    Route::prefix('question-section')->group(function () {
+        Route::match(['get','post'],'', [QuestionSectionController::class, 'index'])->name('question-section.index');
+        Route::get('create', [QuestionSectionController::class, 'create'])->name('question-section.create');
+        Route::post('store',[QuestionSectionController::class,'store'])->name('question-section.store');
+        Route::get('{questionSection}/edit', [QuestionSectionController::class, 'edit'])->name('question-section.edit');
+        Route::put('{questionSection}',[QuestionSectionController::class,'update'])->name('question-section.update');
+
+        Route::delete('',[QuestionSectionController::class,'destroy'])->name('question-section.destroy');
     });
 
     // ContentText routes
