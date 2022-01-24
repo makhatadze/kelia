@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ContentImageController;
 use App\Http\Controllers\Admin\ContentTextController;
 use App\Http\Controllers\Admin\ImageUploadController;
+use App\Http\Controllers\Admin\PacketController;
 use App\Http\Controllers\Admin\QuestionSectionController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ServiceItemController;
@@ -55,7 +57,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get('{contentImage}/edit', [ContentImageController::class, 'edit'])->name('content-image.edit');
         Route::put('{contentImage}',[ContentImageController::class,'update'])->name('content-image.update');
 
-        Route::delete('',[ContentImageController::class,'destroy'])->name('content-image.destroy');
+        Route::delete('{contentImage}',[ContentImageController::class,'destroy'])->name('content-image.destroy');
     });
 
     // Service routes
@@ -65,7 +67,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::post('store',[ServiceController::class,'store'])->name('service.store');
         Route::get('{service}/edit', [ServiceController::class, 'edit'])->name('service.edit');
         Route::put('{service}',[ServiceController::class,'update'])->name('service.update');
-        Route::delete('',[ServiceController::class,'destroy'])->name('service.destroy');
+        Route::delete('{service}',[ServiceController::class,'destroy'])->name('service.destroy');
 
 
         // Service Item
@@ -93,7 +95,26 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get('{contentText}/edit', [ContentTextController::class, 'edit'])->name('content-text.edit');
         Route::put('{contentText}',[ContentTextController::class,'update'])->name('content-text.update');
 
-        Route::delete('',[ContentTextController::class,'destroy'])->name('content-text.destroy');
+        Route::delete('{contentText}',[ContentTextController::class,'destroy'])->name('content-text.destroy');
+    });
+
+
+    // ContentText routes
+    Route::prefix('contact')->group(function () {
+        Route::match(['get','post'],'', [ContactController::class, 'index'])->name('contact.index');
+
+        Route::delete('{contact}',[ContactController::class,'destroy'])->name('contact.destroy');
+    });
+
+    // ContentText routes
+    Route::prefix('packet')->group(function () {
+        Route::match(['get','post'],'', [PacketController::class, 'index'])->name('packet.index');
+        Route::get('create', [PacketController::class, 'create'])->name('packet.create');
+        Route::post('store',[PacketController::class,'store'])->name('packet.store');
+        Route::get('{packet}/edit', [PacketController::class, 'edit'])->name('packet.edit');
+        Route::put('{packet}',[PacketController::class,'update'])->name('packet.update');
+
+        Route::delete('{packet}',[PacketController::class,'destroy'])->name('packet.destroy');
     });
 
 

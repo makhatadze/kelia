@@ -73,6 +73,20 @@ export default function () {
                 type: "route",
             },
             {
+                id: "Packet",
+                label:  "Packet",
+                icon: "edit",
+                link: "packet.index",
+                type: "route",
+            },
+            {
+                id: "Contact",
+                label:  "Contact",
+                icon: "plug",
+                link: "contact.index",
+                type: "route",
+            },
+            {
                 id: "authPages",
                 label:  tm("authPages"),
                 icon: "tv",
@@ -380,13 +394,6 @@ export default function () {
     /*Main Menu Footer*/
     const mainMenuFooterLinks = computed(()=>{
         return [
-            {
-                id: "footerHelp",
-                label:  tm("footerHelp"),
-                linkType: "simple-link",
-                link: "https://github.com/sinan-aydogan",
-                icon: "question"
-            },
             {
                 id: "footerSettings",
                 label:  tm("footerSettings"),
