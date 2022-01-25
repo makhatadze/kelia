@@ -135,10 +135,11 @@ class ContentImageController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(ContentImage $contentImage): \Illuminate\Http\RedirectResponse
+    public function destroy(int $id): \Illuminate\Http\RedirectResponse
     {
+        $contentImage = ContentImage::findOrFail($id);
         $contentImage->delete();
 
-        return redirect()->route('content-image.index')->with('message', 'Yay it worked');
+        return redirect()->back()->with('message', 'Yay it worked');
     }
 }

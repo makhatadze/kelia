@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ContentImageController;
 use App\Http\Controllers\Admin\ContentTextController;
 use App\Http\Controllers\Admin\ImageUploadController;
 use App\Http\Controllers\Admin\PacketController;
+use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\QuestionSectionController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ServiceItemController;
@@ -106,7 +107,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::delete('{contact}',[ContactController::class,'destroy'])->name('contact.destroy');
     });
 
-    // ContentText routes
+    // Packet routes
     Route::prefix('packet')->group(function () {
         Route::match(['get','post'],'', [PacketController::class, 'index'])->name('packet.index');
         Route::get('create', [PacketController::class, 'create'])->name('packet.create');
@@ -115,6 +116,17 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::put('{packet}',[PacketController::class,'update'])->name('packet.update');
 
         Route::delete('{packet}',[PacketController::class,'destroy'])->name('packet.destroy');
+    });
+
+    // Question routes
+    Route::prefix('question')->group(function () {
+        Route::match(['get','post'],'', [QuestionController::class, 'index'])->name('question.index');
+        Route::get('create', [QuestionController::class, 'create'])->name('question.create');
+        Route::post('store',[QuestionController::class,'store'])->name('question.store');
+        Route::get('{packet}/edit', [QuestionController::class, 'edit'])->name('question.edit');
+        Route::put('{packet}',[QuestionController::class,'update'])->name('question.update');
+
+        Route::delete('{packet}',[QuestionController::class,'destroy'])->name('question.destroy');
     });
 
 

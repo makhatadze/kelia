@@ -118,10 +118,11 @@ class ContentTextController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(ContentText $model): \Illuminate\Http\RedirectResponse
+    public function destroy(int $id): \Illuminate\Http\RedirectResponse
     {
+        $model = ContentText::findOrFail($id);
         $model->delete();
 
-        return redirect()->route('content-text.index')->with('message', 'Yay it worked');
+        return redirect()->back()->with('message', 'Yay it worked');
     }
 }
