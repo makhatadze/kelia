@@ -28,15 +28,17 @@ use Spatie\Permission\Models\Role;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('main');
+Route::get('page/{id}', [\App\Http\Controllers\Client\ServiceController::class, 'page'])->name('page');
+Route::get('packets', [\App\Http\Controllers\Client\PacketController::class, 'client'])->name('packets_client');
+
+
 Route::get('immediate', [HomeController::class, 'immediateEncryption'])->name('immediate');
-Route::get('packets', [HomeController::class, 'immediateEncryption'])->name('packets_client');
 Route::get('contactus_store', [HomeController::class, 'immediateEncryption'])->name('contactus_store');
 Route::get('about_us', [HomeController::class, 'immediateEncryption'])->name('about_us');
 Route::get('client_profile', [HomeController::class, 'immediateEncryption'])->name('client_profile');
 Route::get('signout_client', [HomeController::class, 'immediateEncryption'])->name('signout_client');
 Route::get('signout_clien2t', [HomeController::class, 'immediateEncryption'])->name('register_client_page');
 Route::get('signout_cli2en2t', [HomeController::class, 'immediateEncryption'])->name('login_client_page');
-Route::get('page', [HomeController::class, 'immediateEncryption'])->name('page');
 
 
 Route::prefix('admin')->group(function () {

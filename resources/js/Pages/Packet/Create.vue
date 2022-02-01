@@ -61,7 +61,7 @@
                                 </t-button>
 
                             </div>
-                            <div>
+                            <div class="w-full">
                                 <jet-label for="name" value="Name"/>
                                 <t-input-text
                                     id="name"
