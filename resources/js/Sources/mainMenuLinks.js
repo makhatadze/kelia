@@ -73,6 +73,13 @@ export default function () {
                 type: "route",
             },
             {
+                id: "Question",
+                label:  "Question",
+                icon: "question",
+                link: "question.index",
+                type: "route",
+            },
+            {
                 id: "Packet",
                 label:  "Packet",
                 icon: "edit",

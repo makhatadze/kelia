@@ -90,11 +90,11 @@ return [
         ]
     ],
     'question_type' => [
-        1 => 'NONE',
-        2 => 'METER',
-        3 => 'M2',
-        4 => 'M2_DETAIL',
-        5 => 'M3',
-        6 => 'M3_DETAIL',
+        'NONE' => 1,
+        'METER' => 2,
+        'M2' => 3,
+        'M2_DETAIL' => 4,
+        'M3' => 5,
+        'M3_DETAIL' => 6,
     ]
 ];

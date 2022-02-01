@@ -8,20 +8,17 @@
             :header="header"
             content-key="data"
             unique-id="id"
-            search-route="packet.index"
+            search-route="question.index"
         >
             <template #top-right>
-                <Link :href="route('packet.create')">
+                <Link :href="route('question.create')">
                     <t-button color="green" design="light" border>+ Add New</t-button>
                 </Link>
-            </template>
-            <template #image_src="{props}">
-                <img :src="props.image_src" alt="" class="w-8 h-8 rounded-full">
             </template>
         </t-back-end-table>
         <t-modal v-model="showModal">
             <template #header>
-                Packet Deleting
+                Question Deleting
             </template>
             <template #content>
                 <span v-html="modalContent"></span>
@@ -95,21 +92,20 @@ export default {
         })
 
         const actionClick = (item,action)=> {
-            console.log(action)
             switch (action) {
                 case "delete":
                     showModal.value = true
                     modalContent.value = `You are going to delete <b> ${item.id} </b>, Are you sure ?`
                     break
                 case "edit":
-                    Inertia.visit(route('packet.edit',item.id));
+                    Inertia.visit(route('question.edit',item.id));
             }
 
         }
 
         const deleteItem = ()=> {
             form.id = selectedItem.value;
-            form.delete(route('packet.destroy', selectedItem.value), {
+            form.delete(route('question.destroy', selectedItem.value), {
                 preserveScroll: true,
                 onSuccess: () => showModal.value = false,
             })
@@ -124,8 +120,8 @@ export default {
 
         const header = reactive([
             {
-                label: "Name",
-                key: "name",
+                label: "Title",
+                key: "body",
                 align: "left",
                 status: true,
                 sortable: true,
@@ -134,41 +130,7 @@ export default {
                 advancedSearchSelectInputSource: true,
                 advancedSearchInputType: "text",
                 compareOperators: compareOperators
-            },
-            {
-                label: "Image",
-                key: "image_src",
-                align: "center",
-                status: true,
-                sortable: false,
-                simpleSearchable: false,
-                advancedSearchable: false,
-                advancedSearchInputType: "between",
-            },
-            {
-                label: "Sub Text",
-                key: "sub_text",
-                align: "left",
-                status: true,
-                sortable: true,
-                simpleSearchable: true,
-                advancedSearchable: true,
-                advancedSearchSelectInputSource: true,
-                advancedSearchInputType: "text",
-                compareOperators: compareOperators
-            },
-            {
-                label: "Mini Sub Text",
-                key: "mini_sub_text",
-                align: "left",
-                status: true,
-                sortable: true,
-                simpleSearchable: true,
-                advancedSearchable: true,
-                advancedSearchSelectInputSource: true,
-                advancedSearchInputType: "text",
-                compareOperators: compareOperators
-            },
+            }
         ])
 
         return {

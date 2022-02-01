@@ -3,47 +3,59 @@
         <form @submit.prevent="createContentImage">
             <div class="px-4 py-5 bg-white sm:p-6 shadow"
                  :class="'sm:rounded-tl-md sm:rounded-tr-md'">
-                <div class="grid w-full grid-flow-row gap-4 xl:gap-24 mb-4 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 justify-items-stretch">
-                    <div class="flex flex-col gap-6">
+                <div class="mb-4">
+                    <jet-label for="parent" value="Previous Answers"/>
+                    <t-input-multi-select
+                        :options="answers"
+                        v-model="form.previous_answers"
+                        options-value-key="id"
+                        options-label-key="body"
+                        :model-value="[]"
+                    />
+                    <jet-input-error :message="form.errors.answer_id" class="mt-2"/>
+                </div>
+                <div class="grid w-full grid-flow-row gap-4 xl:gap-24 mb-4 grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 justify-items-stretch">
+                    <div class="lg:col-span-1 xl:col-span-1 flex flex-col gap-6">
+                        <div class="col-span-6 sm:col-span-4">
+                            <jet-label for="tag" value="Type"/>
+                            <t-input-select :options="types" v-model="form.type"/>
+                            <jet-input-error :message="form.errors.type" class="mt-2"/>
+                        </div>
                         <div>
-                            <jet-label for="name" value="Name"/>
+                            <jet-label for="body" value="Body"/>
                             <t-input-text
-                                id="name"
-                                v-model="form.name"
+                                id="body"
+                                v-model="form.body"
+                                type="text"
+                            />
+                            <jet-input-error :message="form.errors.body" class="mt-2"/>
+                        </div>
+                        <div>
+                            <jet-label for="parent" value="Category Section"/>
+                            <t-input-select :options="questionSections" v-model="form.section_id"/>
+                            <jet-input-error :message="form.errors.section_id" class="mt-2"/>
+                        </div>
+                        <div>
+                            <jet-label for="body" value="Description"/>
+                            <t-input-text
+                                id="description"
+                                v-model="form.description"
                                 type="text"
                             />
                             <jet-input-error :message="form.errors.name" class="mt-2"/>
                         </div>
                         <div>
-                            <jet-label for="name" value="Sub Text"/>
-                            <t-input-text
-                                id="sub_text"
-                                v-model="form.sub_text"
-                                type="text"
-                            />
-                            <jet-input-error :message="form.errors.sub_text" class="mt-2"/>
-                        </div>
-                        <div>
-                            <jet-label for="name" value="Mini Sub Text"/>
-                            <t-input-text
-                                id="mini_sub_text"
-                                v-model="form.mini_sub_text"
-                                type="text"
-                            />
-                            <jet-input-error :message="form.errors.mini_sub_text" class="mt-2"/>
-                        </div>
-                        <div>
                             <jet-label for="image" value="Image"/>
-                            <t-input-file default-value="" model-name="packet" v-model="form.image"/>
+                            <t-input-file style="max-height: 320px; max-width: 420px" default-value="" model-name="question" v-model="form.image"/>
                             <jet-input-error :message="form.errors.image" class="mt-2"/>
                         </div>
                     </div>
-                    <div class="">
-                        <t-button  @click.prevent="addPacketItem()" color="blue mb-6" design="light" border>+ Add New Item</t-button>
+                    <div class="lg:col-span-2 xl:col-span-2">
+                        <t-button  @click.prevent="addAnswerItem()" color="blue mb-6" design="light" border>+ Add New Item</t-button>
 
-                        <div class="flex flex-row gap-6 mb-6" v-for="(item, index) in form.packetItems" :key="`packetItem-${index}`">
+                        <div class="flex flex-row gap-6 mb-6" v-for="(item, index) in form.answerItems" :key="`packetItem-${index}`">
                             <div>
-                                <t-button @click.prevent="removePacketItem(index)" :radius="8" design="link-plus" color="red mt-5">
+                                <t-button @click.prevent="removeAnswerItem(index)" :radius="8" design="link-plus" color="red mt-5">
                                     <svg
                                         class="w-6 h-6"
                                         fill="none"
@@ -61,16 +73,29 @@
                                 </t-button>
 
                             </div>
-                            <div>
-                                <jet-label for="name" value="Name"/>
+                            <div class="w-1/2">
+                                <jet-label for="name" value="Body"/>
                                 <t-input-text
                                     id="name"
-                                    v-model="item.text"
+                                    v-model="item.body"
                                     type="text"
                                 />
-                                <jet-input-error :message="form.errors[`packetItems.${index}.text`]" class="mt-2"/>
+                                <jet-input-error :message="form.errors[`answerItems.${index}.body`]" class="mt-2"/>
                             </div>
-
+                            <div>
+                                <jet-label for="image" value="Image"/>
+                                <t-input-file style="max-height: 40px; max-width: 120px" default-value="" model-name="answer" v-model="item.image"/>
+                                <jet-input-error :message="form.errors[`answerItems.${index}.image`]" class="mt-2"/>
+                            </div>
+                            <div>
+                                <jet-label for="name" value="Price"/>
+                                <t-input-text
+                                    id="price"
+                                    v-model="item.price"
+                                    type="number"
+                                />
+                                <jet-input-error :message="form.errors[`answerItems.${index}.price`]" class="mt-2"/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -100,6 +125,8 @@ import AppLayout from "@/Layouts/AppLayout";
 import TInputFile from "@/Components/Form/Inputs/TInputFile";
 import TInputText from "@/Components/Form/Inputs/TInputText";
 import TButton from "@/Components/Button/TButton";
+import TInputSelect from "@/Components/Form/Inputs/TInputSelect";
+import TInputMultiSelect from "@/Components/Form/Inputs/TInputMultiSelect";
 
 export default defineComponent({
     components: {
@@ -110,19 +137,45 @@ export default defineComponent({
         JetLabel,
         TInputFile,
         TInputText,
-        TButton
+        TButton,
+        TInputSelect,
+        TInputMultiSelect
+    },
+    props: {
+        questionSections: {
+            type: Array,
+            default() {
+                return []
+            }
+        },
+        types: {
+            type: Array,
+            default() {
+                return []
+            }
+        },
+        answers: {
+            type: Array,
+            default() {
+                return []
+            }
+        }
     },
     data() {
         return {
             form: this.$inertia.form({
                 _method: 'POST',
-                name: '',
-                sub_text: '',
-                mini_sub_text: '',
+                body: '',
+                type: 1,
+                section_id: null,
+                previous_answers: [],
+                description: '',
                 image: null,
-                packetItems: [
+                answerItems: [
                     {
-                        text: ''
+                        body: '',
+                        image: null,
+                        price: 0
                     }
                 ]
             }),
@@ -130,18 +183,22 @@ export default defineComponent({
     },
     methods: {
         createContentImage() {
-            this.form.post(route('packet.store'), {
+            this.form.post(route('question.store'), {
                 preserveScroll: true,
                 forceFormData: true,
                 onSuccess: () => (this.form.reset()),
             });
         },
-        addPacketItem() {
-            this.form.packetItems.push({text: ''})
+        addAnswerItem() {
+            this.form.answerItems.push({
+                body: '',
+                image: null,
+                price: 0
+            })
         },
-        removePacketItem(index) {
-            if (this.form.packetItems.length > 1){
-                this.form.packetItems.splice(index,1)
+        removeAnswerItem(index) {
+            if (this.form.answerItems.length > 1){
+                this.form.answerItems.splice(index,1)
             }
         }
     },

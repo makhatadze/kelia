@@ -1126,6 +1126,10 @@ select {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -1141,10 +1145,6 @@ select {
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
-}
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
 }
 .my-0 {
   margin-top: 0px;
@@ -1424,6 +1424,9 @@ select {
 .w-28 {
   width: 7rem;
 }
+.w-1\/2 {
+  width: 50%;
+}
 .w-3 {
   width: 0.75rem;
 }
@@ -1435,9 +1438,6 @@ select {
 }
 .w-32 {
   width: 8rem;
-}
-.w-1\/2 {
-  width: 50%;
 }
 .min-w-0 {
   min-width: 0px;
@@ -15995,6 +15995,14 @@ code.hljs::-webkit-scrollbar-thumb {
     grid-column: span 4 / span 4;
   }
 
+  .lg\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
+  .lg\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
   .lg\:col-span-6 {
     grid-column: span 6 / span 6;
   }
@@ -16061,6 +16069,14 @@ code.hljs::-webkit-scrollbar-thumb {
   }
 }
 @media (min-width: 1280px) {
+
+  .xl\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
+  .xl\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
 
   .xl\:h-16 {
     height: 4rem;

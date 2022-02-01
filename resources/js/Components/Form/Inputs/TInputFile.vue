@@ -7,8 +7,8 @@
             ref="file"
             @change="handleFileUpload(modelName)"
         />
-        <div style="max-width: 400px; max-height: 400px" >
-            <img :src="modelValue ? preview : noImage" alt="Avatar" class="h-full w-full object-cover" />
+        <div>
+            <img :src="modelValue ? preview : noImage" alt="Avatar" class="h-full w-full object-fit" />
         </div>
         <div
             class="absolute top-0 h-full w-full bg-black bg-opacity-25 flex items-center justify-center"

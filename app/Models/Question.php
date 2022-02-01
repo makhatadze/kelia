@@ -44,11 +44,49 @@ class Question extends Model
         'type',
     ];
 
-    protected $appends = array('image_src','image_id');
+    protected $appends = array('image_src','image_id','previous_answers_ids','answers_ids');
 
 
 
     public function answers(): HasMany {
         return $this->hasMany(Answer::class, 'question_id');
+    }
+
+    public function previousAnswers(): HasMany {
+        return $this->hasMany(Answer::class, 'next_question_id','id');
+    }
+
+    /**
+     * Get the image path.
+     *
+     * @return string
+     */
+    public function getPreviousAnswersIdsAttribute(): array
+    {
+        $data = [];
+        $previousAnswers = $this->previousAnswers()->get();
+        if (count($previousAnswers)) {
+            foreach ($previousAnswers as $answer) {
+                $data[] = $answer->id;
+            }
+        }
+        return $data;
+    }
+
+    /**
+     * Get the image path.
+     *
+     * @return string
+     */
+    public function getAnswersIdsAttribute(): array
+    {
+        $data = [];
+        $answers = $this->answers()->get();
+        if (count($answers)) {
+            foreach ($answers as $answer) {
+                $data[] = $answer->id;
+            }
+        }
+        return $data;
     }
 }

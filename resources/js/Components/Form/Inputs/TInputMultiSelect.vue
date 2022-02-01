@@ -73,7 +73,6 @@
                                         name="label"
                                         v-html="option[optionsLabelKey]"
                                     />
-
                                     <!--Simple Text Label-->
                                     <span
                                         v-if="!hasSlot('label') && !disabled"
@@ -196,12 +195,12 @@
                                 name="label"
                                 v-html="option[optionsLabelKey]"
                             />
-
                             <!--Simple Text Label-->
                             <span
                                 v-else
                                 v-text="option[optionsLabelKey]"
                             />
+                            {{option?.question['body']}}
 
                             <!--Selected Indicator Icon-->
                             <svg v-if="modelValue.includes(option[optionsValueKey])"
@@ -266,6 +265,10 @@ export default defineComponent({
             default() {
                 return [];
             }
+        },
+        optionsParent: {
+            type: Boolean,
+            default: false
         },
         optionsLabelKey: {
             type: String,
