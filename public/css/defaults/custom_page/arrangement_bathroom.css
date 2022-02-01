@@ -1,0 +1,736 @@
+.elementor-774 .elementor-element.elementor-element-204df22f > .elementor-container {
+    min-height: 60vh;
+}
+
+.elementor-774 .elementor-element.elementor-element-204df22f.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-204df22f.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-204df22f.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-204df22f.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-204df22f.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-204df22f.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-204df22f.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-204df22f.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-204df22f.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-204df22f:not(.elementor-motion-effects-element-type-background), .elementor-774 .elementor-element.elementor-element-204df22f > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-image: url("../../../img/arrangement_interrior_bg_6.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.elementor-774 .elementor-element.elementor-element-204df22f > .elementor-background-overlay {
+    background-color: var(--e-global-color-primary);
+    opacity: 0.6;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.elementor-774 .elementor-element.elementor-element-204df22f {
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin-top: 60px;
+    margin-bottom: 0px;
+}
+
+.elementor-774 .elementor-element.elementor-element-5db81dc1.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-774 .elementor-element.elementor-element-5db81dc1.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-3469651e {
+    text-align: center;
+}
+
+.elementor-774 .elementor-element.elementor-element-3469651e .elementor-heading-title {
+    color: var(--e-global-color-64c3f37);
+}
+
+.elementor-774 .elementor-element.elementor-element-3469651e.ob-harakiri {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-3469651e.ob-harakiri .elementor-heading-title {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-3469651e.ob-harakiri .elementor-widget-container > div {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-3469651e .elementor-widget-container {
+    mix-blend-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-3469651e.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-2f220b41 > .elementor-container {
+    max-width: 900px;
+}
+
+.elementor-774 .elementor-element.elementor-element-2f220b41.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-2f220b41.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-2f220b41.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-2f220b41.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-2f220b41.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-2f220b41.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-2f220b41.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-2f220b41.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-2f220b41.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-2f220b41:not(.elementor-motion-effects-element-type-background), .elementor-774 .elementor-element.elementor-element-2f220b41 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-color: var(--e-global-color-secondary);
+}
+
+.elementor-774 .elementor-element.elementor-element-2f220b41 {
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    padding: 100px 0px 100px 0px;
+}
+
+.elementor-774 .elementor-element.elementor-element-2f220b41 > .elementor-background-overlay {
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.elementor-774 .elementor-element.elementor-element-70485204.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-774 .elementor-element.elementor-element-70485204.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-5a37c530 {
+    color: var(--e-global-color-primary);
+    font-size: var(--e-global-typography-5d23ba6-font-size);
+    font-weight: var(--e-global-typography-5d23ba6-font-weight);
+    line-height: var(--e-global-typography-5d23ba6-line-height);
+    letter-spacing: var(--e-global-typography-5d23ba6-letter-spacing);
+}
+
+.elementor-774 .elementor-element.elementor-element-5a37c530.ob-harakiri {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-5a37c530.ob-harakiri .elementor-heading-title {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-5a37c530.ob-harakiri .elementor-widget-container > div {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-5a37c530 .elementor-widget-container {
+    mix-blend-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-5a37c530.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-54f866e > .elementor-container {
+    max-width: 900px;
+}
+
+.elementor-774 .elementor-element.elementor-element-54f866e.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-54f866e.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-54f866e.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-54f866e.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-54f866e.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-54f866e.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-54f866e.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-54f866e.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-54f866e.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-54f866e {
+    padding: 100px 0px 0100px 0px;
+}
+
+.elementor-774 .elementor-element.elementor-element-51d044ff.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-774 .elementor-element.elementor-element-51d044ff.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-10952c7e.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-10952c7e.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-10952c7e.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-10952c7e.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-10952c7e.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-10952c7e.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-10952c7e.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-10952c7e.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-10952c7e.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-de7f670.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-774 .elementor-element.elementor-element-de7f670.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-27a8b222.ob-harakiri {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-27a8b222.ob-harakiri .elementor-heading-title {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-27a8b222.ob-harakiri .elementor-widget-container > div {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-27a8b222 .elementor-widget-container {
+    mix-blend-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-27a8b222 > .elementor-widget-container {
+    margin: 0px 0px 20px 0px;
+}
+
+.elementor-774 .elementor-element.elementor-element-27a8b222.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-6b075022.ob-harakiri {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-6b075022.ob-harakiri .elementor-heading-title {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-6b075022.ob-harakiri .elementor-widget-container > div {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-6b075022 .elementor-widget-container {
+    mix-blend-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-6b075022.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-3a4367ca.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-3a4367ca.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-3a4367ca.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-3a4367ca.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-3a4367ca.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-3a4367ca.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-3a4367ca.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-3a4367ca.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-3a4367ca.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-40d8f539.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-774 .elementor-element.elementor-element-40d8f539.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-190f5103 > .elementor-container {
+    min-height: 60vh;
+}
+
+.elementor-774 .elementor-element.elementor-element-190f5103.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-190f5103.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-190f5103.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-190f5103.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-190f5103.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-190f5103.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-190f5103.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-190f5103.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-190f5103.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-190f5103:not(.elementor-motion-effects-element-type-background), .elementor-774 .elementor-element.elementor-element-190f5103 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.elementor-774 .elementor-element.elementor-element-190f5103 {
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+}
+
+.elementor-774 .elementor-element.elementor-element-190f5103 > .elementor-background-overlay {
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.elementor-774 .elementor-element.elementor-element-50225dc7.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-774 .elementor-element.elementor-element-50225dc7.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-6f7c3e5.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-774 .elementor-element.elementor-element-6f7c3e5 > .elementor-element-populated {
+    margin: 22% 0% 0% 0%;
+}
+
+.elementor-774 .elementor-element.elementor-element-6f7c3e5.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-1bab8bac > .elementor-container {
+    min-height: 60vh;
+}
+
+.elementor-774 .elementor-element.elementor-element-1bab8bac.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-1bab8bac.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-1bab8bac.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-1bab8bac.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-1bab8bac.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-1bab8bac.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-1bab8bac.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-1bab8bac.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-1bab8bac.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-1bab8bac:not(.elementor-motion-effects-element-type-background), .elementor-774 .elementor-element.elementor-element-1bab8bac > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-image: url("../../../img/arrangement_interrior_bg_7.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.elementor-774 .elementor-element.elementor-element-1bab8bac {
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+}
+
+.elementor-774 .elementor-element.elementor-element-1bab8bac > .elementor-background-overlay {
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.elementor-774 .elementor-element.elementor-element-76185b56.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-774 .elementor-element.elementor-element-76185b56.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-41c5858f > .elementor-container {
+    max-width: 900px;
+}
+
+.elementor-774 .elementor-element.elementor-element-41c5858f.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-41c5858f.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-41c5858f.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-41c5858f.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-41c5858f.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-41c5858f.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-41c5858f.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-41c5858f.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-41c5858f.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-41c5858f {
+    padding: 0px 0px 100px 0px;
+}
+
+.elementor-774 .elementor-element.elementor-element-50473d44.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-774 .elementor-element.elementor-element-50473d44.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-53d9d3dc.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-53d9d3dc.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-53d9d3dc.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-53d9d3dc.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-53d9d3dc.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-53d9d3dc.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-53d9d3dc.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-53d9d3dc.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-53d9d3dc.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-53d9d3dc {
+    margin-top: 060px;
+    margin-bottom: 0px;
+}
+
+.elementor-774 .elementor-element.elementor-element-54ba434.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-774 .elementor-element.elementor-element-54ba434.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-36983d05.ob-harakiri {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-36983d05.ob-harakiri .elementor-heading-title {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-36983d05.ob-harakiri .elementor-widget-container > div {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-36983d05 .elementor-widget-container {
+    mix-blend-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-36983d05 > .elementor-widget-container {
+    margin: 0px 0px 20px 0px;
+}
+
+.elementor-774 .elementor-element.elementor-element-36983d05.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-2dbb0c14.ob-harakiri {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-2dbb0c14.ob-harakiri .elementor-heading-title {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-2dbb0c14.ob-harakiri .elementor-widget-container > div {
+    writing-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-2dbb0c14 .elementor-widget-container {
+    mix-blend-mode: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-2dbb0c14.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-4f0dabbb.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-4f0dabbb.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-4f0dabbb.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-774 .elementor-element.elementor-element-4f0dabbb.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-774 .elementor-element.elementor-element-4f0dabbb.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-4f0dabbb.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-4f0dabbb.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-774 .elementor-element.elementor-element-4f0dabbb.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-774 .elementor-element.elementor-element-4f0dabbb.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-774 .elementor-element.elementor-element-4f0dabbb {
+    padding: 0px 0px 193px 0px;
+}
+
+.elementor-774 .elementor-element.elementor-element-62217eab.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-774 .elementor-element.elementor-element-62217eab.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 .eael-data-table {
+    max-width: 100%;
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 .eael-data-table thead tr th {
+    color: var(--e-global-color-primary);
+    background-color: var(--e-global-color-4ba1b97);
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 table.dataTable thead .sorting:after {
+    color: var(--e-global-color-primary);
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 table.dataTable thead .sorting_asc:after {
+    color: var(--e-global-color-primary);
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 table.dataTable thead .sorting_desc:after {
+    color: var(--e-global-color-primary);
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 .eael-data-table thead tr th:hover {
+    color: var(--e-global-color-primary);
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 table.dataTable thead .sorting:after:hover {
+    color: var(--e-global-color-primary);
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 table.dataTable thead .sorting_asc:after:hover {
+    color: var(--e-global-color-primary);
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 table.dataTable thead .sorting_desc:after:hover {
+    color: var(--e-global-color-primary);
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 .eael-data-table thead tr th i {
+    font-size: 20px;
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 .eael-data-table thead tr th .data-table-header-svg-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 .eael-data-table tbody > tr:nth-child(2n) td {
+    color: var(--e-global-color-text);
+    background: #f2f2f2;
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 .eael-data-table tbody > tr:nth-child(2n+1) td {
+    color: #6d7882;
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 .eael-data-table tbody > tr:nth-child(2n+1) td:hover {
+    color: #6d7882;
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 .eael-data-table-wrap table td a {
+    color: #c15959;
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 .eael-data-table-wrap table td a:hover {
+    color: #6d7882;
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 .eael-data-table tbody .td-content-wrapper .eael-datatable-icon i {
+    font-size: 20px;
+    color: #c15959;
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 .eael-data-table tbody .td-content-wrapper .eael-datatable-icon svg {
+    height: 20px;
+    width: 20px;
+    fill: #c15959;
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 .eael-data-table tbody .td-content-wrapper:hover .eael-datatable-icon i {
+    color: #6d7882;
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025 .eael-data-table tbody .td-content-wrapper:hover .eael-datatable-icon svg {
+    fill: #6d7882;
+}
+
+.elementor-774 .elementor-element.elementor-element-787be025.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+html, body {
+    overflow-x: inherit;
+}
+
+.eael-reading-progress-wrap .eael-reading-progress {
+    height: 5px !important;
+}
+
+.eael-reading-progress-wrap .eael-reading-progress .eael-reading-progress-fill {
+    height: 5px !important;
+    background-color: #1fd18e !important;
+    transition: width 50ms ease;
+}
+
+@media (max-width: 1024px) {
+    .elementor-774 .elementor-element.elementor-element-5a37c530 {
+        font-size: var(--e-global-typography-5d23ba6-font-size);
+        line-height: var(--e-global-typography-5d23ba6-line-height);
+        letter-spacing: var(--e-global-typography-5d23ba6-letter-spacing);
+    }
+}
+
+@media (max-width: 767px) {
+    .elementor-774 .elementor-element.elementor-element-5a37c530 {
+        font-size: var(--e-global-typography-5d23ba6-font-size);
+        line-height: var(--e-global-typography-5d23ba6-line-height);
+        letter-spacing: var(--e-global-typography-5d23ba6-letter-spacing);
+    }
+}

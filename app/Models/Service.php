@@ -10,6 +10,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property string title
@@ -39,5 +40,12 @@ class Service extends Model
     public function getServiceItemListAttribute(): string
     {
         return route('service-item.index',$this->id);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function pages(): HasMany {
+        return $this->hasMany(ServiceItem::class);
     }
 }

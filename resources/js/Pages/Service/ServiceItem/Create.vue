@@ -58,11 +58,7 @@
                 </div>
                 <div class="col-span-6 sm:col-span-4">
                     <jet-label for="body_text_head" value="Body text bottom"/>
-                    <t-input-text
-                        id="headTitle"
-                        v-model="form.body_text_bottom"
-                        type="text"
-                    />
+                    <editor v-model="form.body_text_bottom" theme="snow" :options="quilOptions"></editor>
                     <jet-input-error :message="form.errors.body_text_bottom" class="mt-2"/>
                 </div>
 
@@ -91,6 +87,8 @@ import JetActionMessage from '@/Jetstream/ActionMessage.vue'
 import AppLayout from "@/Layouts/AppLayout";
 import TInputText from "@/Components/Form/Inputs/TInputText";
 import TInputFile from "@/Components/Form/Inputs/TInputFile";
+import '@morioh/v-quill-editor/dist/editor.css';
+import Editor from '@morioh/v-quill-editor'
 
 export default defineComponent({
     components: {
@@ -101,7 +99,8 @@ export default defineComponent({
         JetInputError,
         JetLabel,
         TInputText,
-        TInputFile
+        TInputFile,
+        Editor
     },
     data() {
         return {
@@ -116,6 +115,23 @@ export default defineComponent({
                 imageSecond: '',
                 body_text_bottom: ''
             }),
+            quilOptions: {
+                modules: {
+
+                    'toolbar': [
+                        [{ 'size': [] }],
+                        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+                        ['bold', 'italic', 'underline', 'strike'],
+                        [{ 'color': [] }, { 'background': [] }],
+                        [{ 'script': 'super' }, { 'script': 'sub' }],
+                        [{ 'header': '1' }, { 'header': '2' }, 'blockquote', 'code-block'],
+                        [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+                        [{ 'direction': 'rtl' }, { 'align': [] }],
+                        ['link', 'image', 'video', 'formula'],
+                        ['clean']
+                    ],
+                },
+            }
         }
     },
     methods: {

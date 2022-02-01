@@ -73,7 +73,7 @@ class QuestionSectionController extends Controller
         $model->section_id = $request->input('section_id');
         $model->save();
 
-        return redirect()->route('question-section.index')->with('message', 'Yay it worked');
+        return redirect()->back()->with('message', 'Yay it worked');
     }
 
 

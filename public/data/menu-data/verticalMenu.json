@@ -1,0 +1,46 @@
+{
+    "menu": [
+        {
+            "url": "admin/",
+            "name": "Home",
+            "icon": "home",
+            "slug": "home"
+        },
+        {
+            "url": "admin/services",
+            "name": "Services",
+            "icon": "server",
+            "slug": "services.index"
+        },
+        {
+            "url": "admin/question-sections",
+            "name": "Question Sections",
+            "icon": "align-left",
+            "slug": "question-sections.index"
+        },
+        {
+            "url": "admin/questions",
+            "name": "Questions",
+            "icon": "edit-2",
+            "slug": "questions.index"
+        },
+        {
+            "url": "admin/chifrage",
+            "name": "Chiffrage immédiat",
+            "icon": "package",
+            "slug": "chifrage.index"
+        },
+        {
+            "url": "admin/packets",
+            "name": "Packets",
+            "icon": "grid",
+            "slug": "packets.index"
+        },
+        {
+            "url": "admin/contactus",
+            "name": "Contact Us",
+            "icon": "users",
+            "slug": "contactus.index"
+        }
+    ]
+}

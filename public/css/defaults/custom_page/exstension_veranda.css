@@ -1,0 +1,922 @@
+.elementor-1096 .elementor-element.elementor-element-4347d19 > .elementor-container {
+    min-height: 60vh;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4347d19.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-4347d19.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4347d19.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-4347d19.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4347d19.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-4347d19.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4347d19.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-4347d19.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4347d19.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4347d19:not(.elementor-motion-effects-element-type-background), .elementor-1096 .elementor-element.elementor-element-4347d19 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-image: url("../../../img/arrangement_17.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4347d19 > .elementor-background-overlay {
+    background-color: var(--e-global-color-primary);
+    opacity: 0.6;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4347d19 {
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin-top: 60px;
+    margin-bottom: 0px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-42a4320b.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-1096 .elementor-element.elementor-element-42a4320b.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-19632139 {
+    text-align: center;
+}
+
+.elementor-1096 .elementor-element.elementor-element-19632139 .elementor-heading-title {
+    color: var(--e-global-color-64c3f37);
+}
+
+.elementor-1096 .elementor-element.elementor-element-19632139.ob-harakiri {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-19632139.ob-harakiri .elementor-heading-title {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-19632139.ob-harakiri .elementor-widget-container > div {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-19632139 .elementor-widget-container {
+    mix-blend-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-19632139.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-5bfffc01 > .elementor-container {
+    max-width: 900px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5bfffc01.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-5bfffc01.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5bfffc01.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-5bfffc01.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5bfffc01.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-5bfffc01.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5bfffc01.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-5bfffc01.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5bfffc01.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5bfffc01:not(.elementor-motion-effects-element-type-background), .elementor-1096 .elementor-element.elementor-element-5bfffc01 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-color: var(--e-global-color-secondary);
+}
+
+.elementor-1096 .elementor-element.elementor-element-5bfffc01 {
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    padding: 100px 0px 100px 0px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5bfffc01 > .elementor-background-overlay {
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.elementor-1096 .elementor-element.elementor-element-3f33ac07.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-1096 .elementor-element.elementor-element-3f33ac07.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-799a99e0 {
+    color: var(--e-global-color-primary);
+    font-size: var(--e-global-typography-5d23ba6-font-size);
+    font-weight: var(--e-global-typography-5d23ba6-font-weight);
+    line-height: var(--e-global-typography-5d23ba6-line-height);
+    letter-spacing: var(--e-global-typography-5d23ba6-letter-spacing);
+}
+
+.elementor-1096 .elementor-element.elementor-element-799a99e0.ob-harakiri {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-799a99e0.ob-harakiri .elementor-heading-title {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-799a99e0.ob-harakiri .elementor-widget-container > div {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-799a99e0 .elementor-widget-container {
+    mix-blend-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-799a99e0.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-5ca65da4 > .elementor-container {
+    max-width: 900px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5ca65da4.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-5ca65da4.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5ca65da4.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-5ca65da4.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5ca65da4.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-5ca65da4.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5ca65da4.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-5ca65da4.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5ca65da4.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5ca65da4 {
+    padding: 100px 0px 0100px 0px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-1a430d51.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-1096 .elementor-element.elementor-element-1a430d51.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-e9b2faa.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-e9b2faa.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-e9b2faa.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-e9b2faa.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-e9b2faa.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-e9b2faa.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-e9b2faa.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-e9b2faa.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-e9b2faa.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-e9b2faa {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-f6016a6.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-1096 .elementor-element.elementor-element-f6016a6.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-ac445ba.ob-harakiri {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-ac445ba.ob-harakiri .elementor-heading-title {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-ac445ba.ob-harakiri .elementor-widget-container > div {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-ac445ba .elementor-widget-container {
+    mix-blend-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-ac445ba > .elementor-widget-container {
+    margin: 0px 0px 20px 0px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-ac445ba.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-ac8e379.ob-harakiri {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-ac8e379.ob-harakiri .elementor-heading-title {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-ac8e379.ob-harakiri .elementor-widget-container > div {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-ac8e379 .elementor-widget-container {
+    mix-blend-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-ac8e379.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-6130509e.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-6130509e.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-6130509e.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-6130509e.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-6130509e.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-6130509e.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-6130509e.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-6130509e.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-6130509e.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-464ceb75.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-1096 .elementor-element.elementor-element-464ceb75.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-5a27bc19 > .elementor-container {
+    min-height: 60vh;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5a27bc19.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-5a27bc19.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5a27bc19.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-5a27bc19.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5a27bc19.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-5a27bc19.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5a27bc19.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-5a27bc19.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5a27bc19.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5a27bc19:not(.elementor-motion-effects-element-type-background), .elementor-1096 .elementor-element.elementor-element-5a27bc19 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-image: url("../../../img/arrangement_interrior_bg_10.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5a27bc19 {
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5a27bc19 > .elementor-background-overlay {
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5e5b40f7.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5e5b40f7.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-51aab6f6.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-1096 .elementor-element.elementor-element-51aab6f6 > .elementor-element-populated {
+    margin: 22% 0% 0% 0%;
+}
+
+.elementor-1096 .elementor-element.elementor-element-51aab6f6.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-4266058 > .elementor-container {
+    min-height: 60vh;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4266058.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-4266058.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4266058.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-4266058.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4266058.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-4266058.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4266058.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-4266058.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4266058.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4266058:not(.elementor-motion-effects-element-type-background), .elementor-1096 .elementor-element.elementor-element-4266058 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-image: url("../../../img/arrangement_12.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4266058 {
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4266058 > .elementor-background-overlay {
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.elementor-1096 .elementor-element.elementor-element-1f5accc0.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-1096 .elementor-element.elementor-element-1f5accc0.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-184c1d2a > .elementor-container {
+    max-width: 900px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-184c1d2a.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-184c1d2a.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-184c1d2a.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-184c1d2a.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-184c1d2a.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-184c1d2a.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-184c1d2a.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-184c1d2a.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-184c1d2a.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-184c1d2a {
+    padding: 0px 0px 100px 0px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4cc9d13f.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-1096 .elementor-element.elementor-element-4cc9d13f.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-56c81f20.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-56c81f20.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-56c81f20.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-56c81f20.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-56c81f20.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-56c81f20.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-56c81f20.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-56c81f20.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-56c81f20.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-56c81f20 {
+    margin-top: 060px;
+    margin-bottom: 0px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5ef19bde.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-1096 .elementor-element.elementor-element-5ef19bde.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-2148e47a.ob-harakiri {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-2148e47a.ob-harakiri .elementor-heading-title {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-2148e47a.ob-harakiri .elementor-widget-container > div {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-2148e47a .elementor-widget-container {
+    mix-blend-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-2148e47a > .elementor-widget-container {
+    margin: 0px 0px 20px 0px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-2148e47a.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-269dcf0d.ob-harakiri {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-269dcf0d.ob-harakiri .elementor-heading-title {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-269dcf0d.ob-harakiri .elementor-widget-container > div {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-269dcf0d .elementor-widget-container {
+    mix-blend-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-269dcf0d.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-747bf68.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-747bf68.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-747bf68.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-747bf68.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-747bf68.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-747bf68.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-747bf68.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-747bf68.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-747bf68.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-747bf68 {
+    margin-top: 060px;
+    margin-bottom: 0px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-ff307ac.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-1096 .elementor-element.elementor-element-ff307ac.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-abda3a4.ob-harakiri {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-abda3a4.ob-harakiri .elementor-heading-title {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-abda3a4.ob-harakiri .elementor-widget-container > div {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-abda3a4 .elementor-widget-container {
+    mix-blend-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-abda3a4 > .elementor-widget-container {
+    margin: 0px 0px 20px 0px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-abda3a4.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-c5053b2.ob-harakiri {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-c5053b2.ob-harakiri .elementor-heading-title {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-c5053b2.ob-harakiri .elementor-widget-container > div {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-c5053b2 .elementor-widget-container {
+    mix-blend-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-c5053b2.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-175db60.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-175db60.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-175db60.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-175db60.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-175db60.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-175db60.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-175db60.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-175db60.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-175db60.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-175db60 {
+    margin-top: 060px;
+    margin-bottom: 0px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-97ccc49.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-1096 .elementor-element.elementor-element-97ccc49.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-053a810.ob-harakiri {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-053a810.ob-harakiri .elementor-heading-title {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-053a810.ob-harakiri .elementor-widget-container > div {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-053a810 .elementor-widget-container {
+    mix-blend-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-053a810 > .elementor-widget-container {
+    margin: 0px 0px 20px 0px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-053a810.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-f16246c.ob-harakiri {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-f16246c.ob-harakiri .elementor-heading-title {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-f16246c.ob-harakiri .elementor-widget-container > div {
+    writing-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-f16246c .elementor-widget-container {
+    mix-blend-mode: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-f16246c.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-6ab41844.ob-is-breaking-bad > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-6ab41844.ob-is-breaking-bad > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-6ab41844.ob-is-breaking-bad.ob-bb-inner > .elementor-container > .elementor-row, .elementor-1096 .elementor-element.elementor-element-6ab41844.ob-is-breaking-bad.ob-bb-inner > .elementor-container {
+    justify-content: flex-start !important;
+    flex-direction: row;
+}
+
+.elementor-1096 .elementor-element.elementor-element-6ab41844.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-6ab41844.ob-is-breaking-bad.ob-is-glider > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-6ab41844.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical > .elementor-row, .elementor-1096 .elementor-element.elementor-element-6ab41844.ob-is-breaking-bad.ob-is-glider.ob-bb-inner > .elementor-container.swiper-container-vertical {
+    flex-direction: column;
+}
+
+.elementor-1096 .elementor-element.elementor-element-6ab41844.ob-is-breaking-bad.ob-bb-inner {
+    width: 100%;
+    flex: unset;
+    align-self: inherit;
+}
+
+.elementor-1096 .elementor-element.elementor-element-6ab41844 {
+    padding: 0px 0px 193px 0px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-6d2b2f88.elementor-column {
+    align-self: inherit;
+    cursor: default;
+}
+
+.elementor-1096 .elementor-element.elementor-element-6d2b2f88.ob-is-pseudo > .elementor-element-populated:after {
+    transform: rotate(0deg);
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 .eael-data-table {
+    max-width: 100%;
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 .eael-data-table thead tr th {
+    color: var(--e-global-color-primary);
+    background-color: var(--e-global-color-4ba1b97);
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 table.dataTable thead .sorting:after {
+    color: var(--e-global-color-primary);
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 table.dataTable thead .sorting_asc:after {
+    color: var(--e-global-color-primary);
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 table.dataTable thead .sorting_desc:after {
+    color: var(--e-global-color-primary);
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 .eael-data-table thead tr th:hover {
+    color: var(--e-global-color-primary);
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 table.dataTable thead .sorting:after:hover {
+    color: var(--e-global-color-primary);
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 table.dataTable thead .sorting_asc:after:hover {
+    color: var(--e-global-color-primary);
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 table.dataTable thead .sorting_desc:after:hover {
+    color: var(--e-global-color-primary);
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 .eael-data-table thead tr th i {
+    font-size: 20px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 .eael-data-table thead tr th .data-table-header-svg-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 .eael-data-table tbody > tr:nth-child(2n) td {
+    color: var(--e-global-color-text);
+    background: #f2f2f2;
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 .eael-data-table tbody > tr:nth-child(2n+1) td {
+    color: #6d7882;
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 .eael-data-table tbody > tr:nth-child(2n+1) td:hover {
+    color: #6d7882;
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 .eael-data-table-wrap table td a {
+    color: #c15959;
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 .eael-data-table-wrap table td a:hover {
+    color: #6d7882;
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 .eael-data-table tbody .td-content-wrapper .eael-datatable-icon i {
+    font-size: 20px;
+    color: #c15959;
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 .eael-data-table tbody .td-content-wrapper .eael-datatable-icon svg {
+    height: 20px;
+    width: 20px;
+    fill: #c15959;
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 .eael-data-table tbody .td-content-wrapper:hover .eael-datatable-icon i {
+    color: #6d7882;
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03 .eael-data-table tbody .td-content-wrapper:hover .eael-datatable-icon svg {
+    fill: #6d7882;
+}
+
+.elementor-1096 .elementor-element.elementor-element-7e495a03.ob-has-background-overlay > .elementor-widget-container:after {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
+html, body {
+    overflow-x: inherit;
+}
+
+.eael-reading-progress-wrap .eael-reading-progress {
+    height: 5px !important;
+}
+
+.eael-reading-progress-wrap .eael-reading-progress .eael-reading-progress-fill {
+    height: 5px !important;
+    background-color: #1fd18e !important;
+    transition: width 50ms ease;
+}
+
+@media (max-width: 1024px) {
+    .elementor-1096 .elementor-element.elementor-element-799a99e0 {
+        font-size: var(--e-global-typography-5d23ba6-font-size);
+        line-height: var(--e-global-typography-5d23ba6-line-height);
+        letter-spacing: var(--e-global-typography-5d23ba6-letter-spacing);
+    }
+}
+
+@media (max-width: 767px) {
+    .elementor-1096 .elementor-element.elementor-element-799a99e0 {
+        font-size: var(--e-global-typography-5d23ba6-font-size);
+        line-height: var(--e-global-typography-5d23ba6-line-height);
+        letter-spacing: var(--e-global-typography-5d23ba6-letter-spacing);
+    }
+}

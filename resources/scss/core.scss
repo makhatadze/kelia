@@ -1,0 +1,15 @@
+@import './base/bootstrap';
+@import './base/bootstrap-extended';
+@import './base/colors';
+@import './base/components';
+
+.pointer {
+    cursor: pointer !important;
+}
+
+$min-rem: 0.3rem;
+
+.cms-1 {margin-left: $min-rem !important;} // margin-left
+.cme-1 {margin-right: $min-rem !important;} // margin-right
+.cmt-1 {margin-top: $min-rem !important;}
+.cmb-1 {margin-bottom: $min-rem !important;}
