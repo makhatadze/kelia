@@ -29,6 +29,17 @@ class HomeController extends Controller
         ]));
     }
 
+    public function about() {
+        $texts = ContentText::all()->where('tag', '=', config('admin.other.tags.about'));
+        $images = ContentImage::all()->where('tag', '=', config('admin.other.tags.about'));
+
+        return view('client.about', $this->clientMerged([
+            'texts' => $texts,
+            'images' => $images,
+            'contentImage' => ContentImage::where('tag',config('admin.other.tags.about'))->first()
+        ]));
+    }
+
 
     public function immediateEncryption() {
         return view('client.immediate_encryption', $this->clientMerged());

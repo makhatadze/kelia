@@ -1,10 +1,13 @@
 {
+    "/js/core/app-menu.js": "/js/core/app-menu.js",
     "/js/admin.js": "/js/admin.js",
     "/css/admin.css": "/css/admin.css",
     "/css/base/plugins/extensions/ext-component-media-player.css": "/css/base/plugins/extensions/ext-component-media-player.css",
     "/css/base/plugins/extensions/ext-component-drag-drop.css": "/css/base/plugins/extensions/ext-component-drag-drop.css",
     "/css/base/plugins/extensions/ext-component-context-menu.css": "/css/base/plugins/extensions/ext-component-context-menu.css",
+    "/css/style.css": "/css/style.css",
     "/css/base/plugins/charts/chart-apex.css": "/css/base/plugins/charts/chart-apex.css",
+    "/css/core.css": "/css/core.css",
     "/css/base/core/mixins/transitions.css": "/css/base/core/mixins/transitions.css",
     "/css/base/core/mixins/main-menu-mixin.css": "/css/base/core/mixins/main-menu-mixin.css",
     "/css/base/core/mixins/hex2rgb.css": "/css/base/core/mixins/hex2rgb.css",

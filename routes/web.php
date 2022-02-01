@@ -9,7 +9,9 @@ use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\QuestionSectionController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ServiceItemController;
+use App\Http\Controllers\Client\ContactUsController;
 use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\Client\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -30,15 +32,26 @@ use Spatie\Permission\Models\Role;
 Route::get('/', [HomeController::class, 'index'])->name('main');
 Route::get('page/{id}', [\App\Http\Controllers\Client\ServiceController::class, 'page'])->name('page');
 Route::get('packets', [\App\Http\Controllers\Client\PacketController::class, 'client'])->name('packets_client');
-
-
+Route::get('about', [HomeController::class, 'about'])->name('about_us');
 Route::get('immediate', [HomeController::class, 'immediateEncryption'])->name('immediate');
-Route::get('contactus_store', [HomeController::class, 'immediateEncryption'])->name('contactus_store');
-Route::get('about_us', [HomeController::class, 'immediateEncryption'])->name('about_us');
-Route::get('client_profile', [HomeController::class, 'immediateEncryption'])->name('client_profile');
-Route::get('signout_client', [HomeController::class, 'immediateEncryption'])->name('signout_client');
-Route::get('signout_clien2t', [HomeController::class, 'immediateEncryption'])->name('register_client_page');
-Route::get('signout_cli2en2t', [HomeController::class, 'immediateEncryption'])->name('login_client_page');
+Route::get('immediate/{path}', [HomeController::class, 'immediateEncryption'])->where('path', '.*');
+Route::post('contactus', [ContactUsController::class, 'storeClient'])->name('contactus_store');
+
+
+Route::middleware('guest_client')->group(function () {
+    Route::get('/login', [UserController::class, 'loginPage'])->name('login_client_page');
+    Route::post('/login', [UserController::class, 'login'])->name('login_auth');
+    Route::get('/register', [UserController::class, 'registerPage'])->name('register_client_page');
+    Route::post('/register', [UserController::class, 'register'])->name('register_auth');
+});
+
+Route::middleware('auth_client')->group(function () {
+    Route::get('/profile', [UserController::class, 'profile'])->name('client_profile');
+    Route::post('/signout', [UserController::class, 'signOut'])->name('signout_client');
+    Route::put('/profile', [UserController::class, 'update'])->name('client_profile_update');
+    Route::delete('/chiffrage/delete/{id}', [ChiffrageClientController::class, 'delete'])->name('chiffrage_delete');
+});
+
 
 
 Route::prefix('admin')->group(function () {

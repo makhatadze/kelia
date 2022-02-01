@@ -38,10 +38,11 @@
                     </div>
                     <div class="col-span-6">
                         <jet-label for="body_text_head" value="Body text head"/>
-                        <ckeditor :editor="editor"
-                                  :config="editorConfigData"
-                                  @ready="meyCustomUploadAdapterPlugin($event)"
-                                  v-model="form.body_text_head"></ckeditor>
+                        <quill-editor
+                            v-model:value="form.body_text_head"
+                            :options="editorOption"
+                            @change="onEditorChange($event)"
+                        />
                         <jet-input-error :message="form.errors.body_text_head" class="mt-2"/>
                     </div>
                     <div class="col-span-6 sm:col-span-4">
@@ -82,7 +83,6 @@
 <script>
 import {defineComponent} from 'vue'
 import JetButton from '@/Jetstream/Button.vue'
-import JetFormSection from '@/Jetstream/FormSection.vue'
 import JetInputError from '@/Jetstream/InputError.vue'
 import JetLabel from '@/Jetstream/Label.vue'
 import JetActionMessage from '@/Jetstream/ActionMessage.vue'
@@ -92,6 +92,10 @@ import TInputFile from "@/Components/Form/Inputs/TInputFile";
 import '@morioh/v-quill-editor/dist/editor.css';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import MyUploadAdapter from "@/mixins/EditorCustomUpload";
+import 'quill/dist/quill.core.css' // import styles
+import 'quill/dist/quill.snow.css' // for snow theme
+import 'quill/dist/quill.bubble.css' // for bubble theme
+import { quillEditor } from 'vue-quill-editor'
 
 export default defineComponent({
     components: {
@@ -102,6 +106,7 @@ export default defineComponent({
         JetLabel,
         TInputText,
         TInputFile,
+        quillEditor
     },
     props: {
         service: {
@@ -125,10 +130,17 @@ export default defineComponent({
                 body_text_bottom: ''
             }),
             editor: ClassicEditor,
-            editorConfigData: {}
+            editorConfigData: {},
+            content: '<h2>I am Example</h2>',
+            editorOption: {
+                // Some Quill options...
+            }
         }
     },
     methods: {
+        onEditorChange(event) {
+            console.log(event)
+        },
         submitForm() {
             this.form.post(route('service-item.store',this.service.id), {
                 preserveScroll: true,
@@ -142,5 +154,13 @@ export default defineComponent({
             };
         },
     },
+    computed: {
+        editor() {
+            return this.$refs.myQuillEditor.quill
+        }
+    },
+    mounted() {
+        console.log('this is current quill instance object', this.editor)
+    }
 })
 </script>

@@ -87,7 +87,9 @@ mixAssetsDir("fonts/**/**/*.css", (src, dest) => mix.copy(src, dest));
 mix.copyDirectory("resources/images", "public/images");
 mix.copyDirectory("resources/data", "public/data");
 
-
+mix.js("resources/js/core/app-menu.js", "public/js/core")
+    .sass("resources/scss/core.scss", "public/css", { sassOptions })
+    .sass("resources/assets/scss/style.scss", "public/css", { sassOptions });
 
 mix.js('resources/js/admin.js', 'public/js').vue({
     output: {
