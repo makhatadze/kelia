@@ -109,7 +109,7 @@ class PacketController extends Controller
 
         $model->save();
 
-        if ($request->input('image') != $model->image_id) {
+        if ($request->input('image') != $model->image_id || $request->input('image') === '') {
             $model->image()->delete();
 
             if ($request->input('image')) {

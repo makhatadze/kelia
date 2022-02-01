@@ -1,70 +1,72 @@
 <template>
     <app-layout title="Service Item Create">
-        <jet-form-section @submitted="submitForm">
-            <template #title>
-                Service Item
-            </template>
-            <template #form>
-                <div class="col-span-6 sm:col-span-4">
-                    <jet-label for="head_title" value="Head Title"/>
-                    <t-input-text
-                        id="headTitle"
-                        v-model="form.head_title"
-                        type="text"
-                    />
-                    <jet-input-error :message="form.errors.head_title" class="mt-2"/>
-                </div>
-                <div class="col-span-6 sm:col-span-4">
-                    <jet-label for="title" value="Title"/>
-                    <t-input-text
-                        id="title"
-                        v-model="form.title"
-                        type="text"
-                    />
-                    <jet-input-error :message="form.errors.title" class="mt-2"/>
-                </div>
-                <div class="col-span-6 sm:col-span-4">
-                    <jet-label for="head_title" value="Sub Text"/>
-                    <t-input-text
-                        id="headTitle"
-                        v-model="form.sub_text"
-                        type="text"
-                    />
-                    <jet-input-error :message="form.errors.sub_text" class="mt-2"/>
-                </div>
-                <div class="col-span-6 sm:col-span-4">
-                    <jet-label for="img_path" value="Background Image"/>
-                    <t-input-file default-value="" model-name="service-item-bg" v-model="form.imageBg" />
-                    <jet-input-error :message="form.errors.imageBg" class="mt-2"/>
-                </div>
-                <div class="col-span-6 sm:col-span-4">
-                    <jet-label for="body_text_head" value="Body text head"/>
-                    <t-input-text
-                        id="headTitle"
-                        v-model="form.body_text_head"
-                        type="text"
-                    />
-                    <jet-input-error :message="form.errors.body_text_head" class="mt-2"/>
-                </div>
-                <div class="col-span-6 sm:col-span-4">
-                    <jet-label for="img_path" value="First Image"/>
-                    <t-input-file default-value="" model-name="service-item-first" v-model="form.imageFirst" />
-                    <jet-input-error :message="form.errors.imageFirst" class="mt-2"/>
-                </div>
-                <div class="col-span-6 sm:col-span-4">
-                    <jet-label for="img_path" value="Second Image"/>
-                    <t-input-file default-value="" model-name="service-item-second" v-model="form.imageSecond" />
-                    <jet-input-error :message="form.errors.imageSecond" class="mt-2"/>
-                </div>
-                <div class="col-span-6 sm:col-span-4">
-                    <jet-label for="body_text_head" value="Body text bottom"/>
-                    <editor v-model="form.body_text_bottom" theme="snow" :options="quilOptions"></editor>
-                    <jet-input-error :message="form.errors.body_text_bottom" class="mt-2"/>
-                </div>
+        <form @submit.prevent="submitForm">
+            <div class="px-4 py-5 bg-white sm:p-6 shadow"
+                 :class="'sm:rounded-tl-md sm:rounded-tr-md'">
+                <div class="grid w-full grid-flow-row gap-4 mb-4 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 justify-items-stretch">
+                    <div class="col-span-6 sm:col-span-4">
+                        <jet-label for="head_title" value="Head Title"/>
+                        <t-input-text
+                            id="headTitle"
+                            v-model="form.head_title"
+                            type="text"
+                        />
+                        <jet-input-error :message="form.errors.head_title" class="mt-2"/>
+                    </div>
+                    <div class="col-span-6 sm:col-span-4">
+                        <jet-label for="title" value="Title"/>
+                        <t-input-text
+                            id="title"
+                            v-model="form.title"
+                            type="text"
+                        />
+                        <jet-input-error :message="form.errors.title" class="mt-2"/>
+                    </div>
+                    <div class="col-span-6 sm:col-span-4">
+                        <jet-label for="head_title" value="Sub Text"/>
+                        <t-input-text
+                            id="headTitle"
+                            v-model="form.sub_text"
+                            type="text"
+                        />
+                        <jet-input-error :message="form.errors.sub_text" class="mt-2"/>
+                    </div>
+                    <div class="col-span-6 sm:col-span-4">
+                        <jet-label for="img_path" value="Background Image"/>
+                        <t-input-file default-value="" model-name="service-item-bg" v-model="form.imageBg" />
+                        <jet-input-error :message="form.errors.imageBg" class="mt-2"/>
+                    </div>
+                    <div class="col-span-6">
+                        <jet-label for="body_text_head" value="Body text head"/>
+                        <ckeditor :editor="editor"
+                                  :config="editorConfigData"
+                                  @ready="meyCustomUploadAdapterPlugin($event)"
+                                  v-model="form.body_text_head"></ckeditor>
+                        <jet-input-error :message="form.errors.body_text_head" class="mt-2"/>
+                    </div>
+                    <div class="col-span-6 sm:col-span-4">
+                        <jet-label for="img_path" value="First Image"/>
+                        <t-input-file default-value="" model-name="service-item-first" v-model="form.imageFirst" />
+                        <jet-input-error :message="form.errors.imageFirst" class="mt-2"/>
+                    </div>
+                    <div class="col-span-6 sm:col-span-4">
+                        <jet-label for="img_path" value="Second Image"/>
+                        <t-input-file default-value="" model-name="service-item-second" v-model="form.imageSecond" />
+                        <jet-input-error :message="form.errors.imageSecond" class="mt-2"/>
+                    </div>
+                    <div class="col-span-6">
+                        <jet-label for="body_text_head" value="Body text bottom"/>
+                        <ckeditor :editor="editor"
+                                  :config="editorConfigData"
+                                  @ready="meyCustomUploadAdapterPlugin($event)"
+                                  v-model="form.body_text_bottom"></ckeditor>
+                        <jet-input-error :message="form.errors.body_text_bottom" class="mt-2"/>
+                    </div>
 
-            </template>
-
-            <template #actions>
+                </div>
+            </div>
+            <div
+                class="flex items-center justify-start px-4 py-3 bg-gray-50 text-right sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md">
                 <jet-action-message :on="form.recentlySuccessful" class="mr-3">
                     Saved.
                 </jet-action-message>
@@ -72,8 +74,8 @@
                 <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Save
                 </jet-button>
-            </template>
-        </jet-form-section>
+            </div>
+        </form>
     </app-layout>
 </template>
 
@@ -88,19 +90,26 @@ import AppLayout from "@/Layouts/AppLayout";
 import TInputText from "@/Components/Form/Inputs/TInputText";
 import TInputFile from "@/Components/Form/Inputs/TInputFile";
 import '@morioh/v-quill-editor/dist/editor.css';
-import Editor from '@morioh/v-quill-editor'
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import MyUploadAdapter from "@/mixins/EditorCustomUpload";
 
 export default defineComponent({
     components: {
         AppLayout,
         JetActionMessage,
         JetButton,
-        JetFormSection,
         JetInputError,
         JetLabel,
         TInputText,
         TInputFile,
-        Editor
+    },
+    props: {
+        service: {
+            type: Object,
+            default() {
+                return null
+            }
+        },
     },
     data() {
         return {
@@ -115,32 +124,22 @@ export default defineComponent({
                 imageSecond: '',
                 body_text_bottom: ''
             }),
-            quilOptions: {
-                modules: {
-
-                    'toolbar': [
-                        [{ 'size': [] }],
-                        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-                        ['bold', 'italic', 'underline', 'strike'],
-                        [{ 'color': [] }, { 'background': [] }],
-                        [{ 'script': 'super' }, { 'script': 'sub' }],
-                        [{ 'header': '1' }, { 'header': '2' }, 'blockquote', 'code-block'],
-                        [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
-                        [{ 'direction': 'rtl' }, { 'align': [] }],
-                        ['link', 'image', 'video', 'formula'],
-                        ['clean']
-                    ],
-                },
-            }
+            editor: ClassicEditor,
+            editorConfigData: {}
         }
     },
     methods: {
         submitForm() {
-            this.form.post(route('service.store'), {
+            this.form.post(route('service-item.store',this.service.id), {
                 preserveScroll: true,
                 forceFormData: true,
-                onSuccess: () => (this.form.reset('title')),
+                onSuccess: () => (this.form.reset()),
             });
+        },
+        meyCustomUploadAdapterPlugin(editor) {
+            editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+                return new MyUploadAdapter(loader);
+            };
         },
     },
 })

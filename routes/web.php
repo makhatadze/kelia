@@ -89,6 +89,9 @@ Route::prefix('admin')->group(function () {
             // Service Item
             Route::match(['get','post'],'{service}/items', [ServiceItemController::class, 'index'])->name('service-item.index');
             Route::get('{service}/items/create', [ServiceItemController::class, 'create'])->name('service-item.create');
+            Route::post('{service}/items/store',[ServiceItemController::class,'store'])->name('service-item.store');
+            Route::get('{service}/items/{serviceItem}/edit',[ServiceItemController::class,'edit'])->name('service-item.edit');
+            Route::put('{service}/items/{serviceItem}',[ServiceItemController::class,'update'])->name('service-item.update');
 
         });
 
@@ -339,6 +342,7 @@ Route::prefix('admin')->group(function () {
 
     Route::post('upload__file-image',[ImageUploadController::class,'uploadImage'])->name('upload_image');
 
+    Route::any('files/upload_editor',[\App\Http\Controllers\Admin\FileController::class,'uploadForEditor']);
 
 });
 

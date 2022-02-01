@@ -16137,5 +16137,9 @@ code.hljs::-webkit-scrollbar-thumb {
   .xl\:gap-24 {
     gap: 6rem;
   }
+
+  .xl\:gap-12 {
+    gap: 3rem;
+  }
 }
 

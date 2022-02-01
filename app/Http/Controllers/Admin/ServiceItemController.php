@@ -9,7 +9,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ServiceItemRequest;
 use App\Http\Requests\ServiceRequest;
+use App\Models\Image;
 use App\Models\Service;
 use App\Models\ServiceItem;
 use App\Services\ImageUploadService;
@@ -52,6 +54,8 @@ class ServiceItemController extends Controller
     /**
      * Show the form for creating a new resource.
      *
+     * @param int $id
+     *
      * @return \Inertia\Response
      */
     public function create(int $id): Response
@@ -65,17 +69,44 @@ class ServiceItemController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\ServiceRequest $request
+     * @param int $serviceId
+     * @param \App\Http\Requests\ServiceItemRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(ServiceRequest $request): \Illuminate\Http\RedirectResponse
+    public function store(int $serviceId, ServiceItemRequest $request): \Illuminate\Http\RedirectResponse
     {
-        $model = new Service();
+        $bgImage = Image::findOrFail($request->input('imageBg'));
+
+        $model = new ServiceItem();
+        $model->service_id = $serviceId;
         $model->title = $request->input('title');
+        $model->head_title = $request->input('head_title');
+        $model->sub_text = $request->input('sub_text');
+        $model->body_text_head = $request->input('body_text_head');
+        $model->body_text_bottom = $request->input('body_text_bottom');
         $model->save();
 
-        return redirect()->route('service.index')->with('message', 'Yay it worked');
+        // save image
+        $bgImage->imageable()->associate($model);
+        $bgImage->save();
+
+
+        if ($request->input('imageFirst')) {
+            $firstImage = Image::findOrFail($request->input('imageFirst'));
+            $firstImage->imageable()->associate($model);
+            $firstImage->save();
+        }
+
+        if ($request->input('imageSecond')) {
+            $secondImage = Image::findOrFail($request->input('imageSecond'));
+            $secondImage->imageable()->associate($model);
+            $secondImage->save();
+        }
+
+
+
+        return redirect()->back()->with('message', 'Yay it worked');
     }
 
 
@@ -83,31 +114,67 @@ class ServiceItemController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param \App\Models\Service $service
+     * @param \App\Models\ServiceItem $serviceItem
      *
      * @return \Inertia\Response
      */
-    public function edit(Service $service): Response
+    public function edit(Service $service, ServiceItem $serviceItem): Response
     {
-        return Inertia::render('Service/Update',[
-            'item' => $service,
+        return Inertia::render('Service/ServiceItem/Update',[
+            'service' => $service,
+            'item' => $serviceItem,
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \App\Http\Requests\ServiceRequest $request
-     * @param \App\Models\Service $model
+     * @param \App\Http\Requests\ServiceItemRequest $request
+     * @param \App\Models\Service $service
+     * @param int $serviceItemId
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(ServiceRequest $request, int $id): \Illuminate\Http\RedirectResponse
+    public function update(ServiceItemRequest $request, Service $service, int $serviceItemId): \Illuminate\Http\RedirectResponse
     {
-        $model = Service::findOrFail($id);
+        $model = ServiceItem::findOrFail($serviceItemId);
         $model->title = $request->input('title');
-        $model->save();
+        $model->head_title = $request->input('head_title');
+        $model->sub_text = $request->input('sub_text');
+        $model->body_text_head = $request->input('body_text_head');
+        $model->body_text_bottom = $request->input('body_text_bottom');
 
-        return redirect()->route('service.index')->with('message', 'Yay it worked');
+        if ($request->input('imageBg') != $model->image_bg_id) {
+            $imageModel = Image::findOrFail($request->input('imageBg'));
+            $model->imageBg()->delete();
+            // save image
+            $imageModel->imageable()->associate($model);
+            $imageModel->save();
+        }
+
+        if ($request->input('imageFirst') != $model->image_first_id || $request->input('imageFirst') === '') {
+            $model->imageFirst()->delete();
+
+            if ($request->input('imageFirst')) {
+                $imageModel = Image::findOrFail($request->input('imageFirst'));
+                // save image
+                $imageModel->imageable()->associate($model);
+                $imageModel->save();
+            }
+        }
+
+        if ($request->input('imageSecond') != $model->image_second_id || $request->input('imageSecond') === '') {
+            $model->imageSecond()->delete();
+
+            if ($request->input('imageSecond')) {
+                $imageModel = Image::findOrFail($request->input('imageSecond'));
+                // save image
+                $imageModel->imageable()->associate($model);
+                $imageModel->save();
+            }
+        }
+
+        return redirect()->back()->with('message', 'Yay it worked');
     }
 
     /**

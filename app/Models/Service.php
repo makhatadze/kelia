@@ -32,6 +32,14 @@ class Service extends Model
 
     protected $appends = array('serviceItemList');
 
+    protected static function booted() {
+        static::deleting( function ($model) {
+            $model->pages->each(function($item){ //edit after comment
+                $item->delete();
+            });
+        });
+    }
+
     /**
      * Get the image path.
      *

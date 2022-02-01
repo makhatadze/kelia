@@ -123,7 +123,7 @@ export default {
                     modalContent.value = `You are going to delete <b> ${item.id} </b>, Are you sure ?`
                     break
                 case "edit":
-                    Inertia.visit(route('service.edit',item.id));
+                    Inertia.visit(route('service-item.edit',[item.service_id, item.id]));
             }
 
         }
@@ -145,8 +145,8 @@ export default {
 
         const header = reactive([
             {
-                label: "Title",
-                key: "title",
+                label: "Head Title",
+                key: "head_title",
                 align: "left",
                 status: true,
                 sortable: true,
@@ -157,8 +157,8 @@ export default {
                 compareOperators: compareOperators
             },
             {
-                label: "Service Items",
-                key: "id",
+                label: "Title",
+                key: "title",
                 align: "left",
                 status: true,
                 sortable: true,

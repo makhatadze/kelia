@@ -4,6 +4,9 @@ import { createApp, h } from "vue";
 import { createInertiaApp } from "@inertiajs/inertia-vue3";
 import { InertiaProgress } from "@inertiajs/progress";
 
+
+import CKEditor from '@ckeditor/ckeditor5-vue';
+
 /* FontAwesome */
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -46,6 +49,7 @@ createInertiaApp({
         return createApp({ render: () => h(app, props) })
             .use(plugin)
             .use(i18n)
+            .use(CKEditor)
             .use(VueHighlightJS)
             .component("icon", FontAwesomeIcon)
             .mixin({ methods: { route } })
