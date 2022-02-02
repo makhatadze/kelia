@@ -41,6 +41,6 @@ class Answer extends Model
      */
     public function nextQuestion(): BelongsTo
     {
-        return $this->belongsTo(Question::class,'id','next_question_id');
+        return $this->belongsTo(Question::class,'next_question_id','id');
     }
 }

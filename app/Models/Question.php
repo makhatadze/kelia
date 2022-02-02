@@ -44,7 +44,7 @@ class Question extends Model
         'type',
     ];
 
-    protected $appends = array('image_src','image_id','previous_answers_ids','answers_ids');
+    protected $appends = array('image_src','image_id','previous_answers_ids','answers_ids','answer_value');
 
 
 
@@ -88,5 +88,15 @@ class Question extends Model
             }
         }
         return $data;
+    }
+
+    /**
+     * Get the image path.
+     *
+     * @return string
+     */
+    public function getAnswerValueAttribute(): string
+    {
+        return '';
     }
 }

@@ -6,6 +6,8 @@
     "license": "MIT",
     "require": {
         "php": "7.4",
+        "ext-http": "*",
+        "barryvdh/laravel-dompdf": "^1.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "inertiajs/inertia-laravel": "^0.4.3",

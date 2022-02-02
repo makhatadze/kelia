@@ -29,6 +29,10 @@ use Spatie\Permission\Models\Role;
 |
 */
 
+Route::get('test',function () {
+    return view('components.pdf.chiffrage_2');
+});
+
 Route::get('/', [HomeController::class, 'index'])->name('main');
 Route::get('page/{id}', [\App\Http\Controllers\Client\ServiceController::class, 'page'])->name('page');
 Route::get('packets', [\App\Http\Controllers\Client\PacketController::class, 'client'])->name('packets_client');

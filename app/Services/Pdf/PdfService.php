@@ -2,13 +2,7 @@
 
 namespace App\Services\Pdf;
 
-use App\Models\Answers;
-use App\Models\User;
 use Barryvdh\DomPDF\PDF;
-use Illuminate\Http\Request;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\File;
 
 class PdfService {
@@ -18,18 +12,16 @@ class PdfService {
         $this->pdf = $pdf;
     }
 
-    public function download($answersArr, $userForm): array {
-        $answers = Answers::with('question')->whereIn('id', $answersArr)->get();
-
-        $total = $answers->reduce(function ($carry, $item) {
-            return $carry + $item['price'];
-        });
-
+    public function download($answers, $userForm): array {
+        $total = 0;
+        foreach ($answers as $answer) {
+            $total += $answer['total'];
+        }
         // generate and render pdf
         $random = substr(str_shuffle('0123456789abcdefghijklmnop'), 0, 15);
         $pdfName = "$random.pdf";
         $pdfPath = "/uploads/chiffrage-clients";
-        $pdfVew = $this->pdf->loadView('components.pdf.chiffrage', [
+        $pdfVew = $this->pdf->loadView('components.pdf.chiffrage_2', [
             'answers' => $answers,
             'user' => $userForm,
             'total' => $total

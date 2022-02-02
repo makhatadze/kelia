@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/sections', [\App\Http\Controllers\Client\QuestionSectionController::class, 'sections'])->name('api_sections');
+Route::post('/sections/questions', [\App\Http\Controllers\Client\QuestionSectionController::class, 'questions'])->name('api_sections_questions');
+Route::post('/sections/questions/chiffrage/downloadOrSendPdf', [\App\Http\Controllers\Client\ChifrageController::class, 'downloadOrSendPdf'])->name('downloadOrSendPdf');
