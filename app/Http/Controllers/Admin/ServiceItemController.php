@@ -15,6 +15,7 @@ use App\Models\Image;
 use App\Models\Service;
 use App\Models\ServiceItem;
 use App\Services\ImageUploadService;
+use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
@@ -85,7 +86,9 @@ class ServiceItemController extends Controller
         $model->head_title = $request->input('head_title');
         $model->sub_text = $request->input('sub_text');
         $model->body_text_head = $request->input('body_text_head');
+        $model->body_text_head_delta = $request->input('body_text_head_delta');
         $model->body_text_bottom = $request->input('body_text_bottom');
+        $model->body_text_bottom_delta = $request->input('body_text_bottom_delta');
         $model->save();
 
         // save image
@@ -143,7 +146,10 @@ class ServiceItemController extends Controller
         $model->head_title = $request->input('head_title');
         $model->sub_text = $request->input('sub_text');
         $model->body_text_head = $request->input('body_text_head');
+        $model->body_text_head_delta = $request->input('body_text_head_delta');
         $model->body_text_bottom = $request->input('body_text_bottom');
+        $model->body_text_bottom_delta = $request->input('body_text_bottom_delta');
+        $model->save();
 
         if ($request->input('imageBg') != $model->image_bg_id) {
             $imageModel = Image::findOrFail($request->input('imageBg'));

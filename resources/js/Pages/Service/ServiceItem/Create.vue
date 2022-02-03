@@ -41,7 +41,6 @@
                     <t-tab :data="tab2content" v-model="tab2">
                         <template #content="{props}">
                             <div v-if="props.id === 1">
-                                <jet-label for="body_text_head" value="Body text Head"/>
                                 <quill-editor
                                     ref="editor"
                                     content-type="delta"
@@ -52,7 +51,6 @@
                                 <jet-input-error :message="form.errors.body_text_head" class="mt-2"/>
                             </div>
                             <div v-if="props.id === 2">
-                                <jet-label for="body_text_head" value="Body text bottom"/>
                                 <quill-editor
                                     v-model:value="form.content_2"
                                     :options="editorOption"
@@ -135,11 +133,13 @@ export default defineComponent({
                 head_title: '',
                 sub_text: '',
                 body_text_head: '',
+                body_text_head_delta: '',
                 delta: null,
                 imageBg: '',
                 imageFirst: '',
                 imageSecond: '',
-                body_text_bottom: ''
+                body_text_bottom: '',
+                body_text_bottom_delta: ''
             }),
             editor: ClassicEditor,
             editorConfigData: {},
@@ -175,11 +175,13 @@ export default defineComponent({
                 return new MyUploadAdapter(loader);
             };
         },
-        onBodyHeadChange(event) {
-            this.form.body_text_head = JSON.stringify(event.quill.getContents());
+        onBodyHeadChange({quill, html}) {
+            this.form.body_text_head_delta = JSON.stringify(quill.getContents());
+            this.form.body_text_head = JSON.stringify(html);
         },
-        onBodyBottomChange(event) {
-            this.form.body_text_bottom = JSON.stringify(event.quill.getContents());
+        onBodyBottomChange({quill, html}) {
+            this.form.body_text_bottom_delta = JSON.stringify(quill.getContents());
+            this.form.body_text_bottom = JSON.stringify(html);
         }
     },
 })

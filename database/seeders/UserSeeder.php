@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
         /*Admin*/
         $admin = tap(User::create([
             'name' => 'Super Admin',
-            'email' => 'admin@tailadmin.dev',
+            'email' => 'admin@admin.com',
             'password' => bcrypt('admin'),
         ]), function (User $user) {
             (new CreateNewUser())->createTeam($user);

@@ -164,9 +164,8 @@ class QuestionController extends Controller
         $model->description = $request->input('description');
         $model->save();
 
-        if ($request->input('image') != $model->image) {
+        if ($request->input('image') != $model->image_id) {
             $model->image()->delete();
-
             if ($request->input('image')) {
                 $imageModel = Image::findOrFail($request->input('image'));
                 // save image
@@ -174,7 +173,6 @@ class QuestionController extends Controller
                 $imageModel->save();
             }
         }
-
 
         $previousAnswersIds = $request->input('previous_answers') ?? [];
         $previousAnswers = $model->previousAnswers()->get();
@@ -210,7 +208,7 @@ class QuestionController extends Controller
                 $answerModel->save();
 
                 $oldAnswerIds [] = $answer['id'];
-                if ($answer['image'] != $answerModel->image) {
+                if ($answer['image'] != $answerModel->image_id) {
                     $answerModel->image()->delete();
                     if ($answer['image']) {
                         $imageModel = Image::findOrFail($answer['image']);

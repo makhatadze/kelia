@@ -21,6 +21,8 @@ use Illuminate\Database\Eloquent\Relations\MorphOne;
  * @property string sub_text
  * @property string body_text_head
  * @property string body_text_bottom
+ * @property string body_text_head_delta
+ * @property string body_text_bottom_delta
  * @property integer service_id
  *
  * @method static ServiceItem findOrFail(int $id)

@@ -15,7 +15,6 @@
 }
 
 .tab-content {
-    @apply flex p-2 border
 }
 
 .tab-light .tab-content {

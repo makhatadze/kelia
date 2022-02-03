@@ -41,19 +41,23 @@
                     <t-tab :data="tab2content" v-model="tab2">
                         <template #content="{props}">
                             <div v-if="props.id === 1">
-                                <jet-label for="body_text_head" value="Body text Head"/>
-                                <ckeditor :editor="editor"
-                                          :config="editorConfigData"
-                                          @ready="meyCustomUploadAdapterPlugin($event)"
-                                          v-model="form.body_text_head"></ckeditor>
+                                <quill-editor
+                                    ref="editor"
+                                    :value="content_1"
+                                    theme="snow"
+                                    @change="onBodyHeadChange($event)"
+                                    :options="editorOption"
+                                />
                                 <jet-input-error :message="form.errors.body_text_head" class="mt-2"/>
                             </div>
                             <div v-if="props.id === 2">
-                                <jet-label for="body_text_head" value="Body text bottom"/>
-                                <ckeditor :editor="editor"
-                                          :config="editorConfigData"
-                                          @ready="meyCustomUploadAdapterPlugin($event)"
-                                          v-model="form.body_text_bottom"></ckeditor>
+                                <quill-editor
+                                    ref="editor2"
+                                    :value="content_2"
+                                    :options="editorOption"
+                                    content-type="delta"
+                                    @change="onBodyBottomChange($event)"
+                                />
                                 <jet-input-error :message="form.errors.body_text_bottom" class="mt-2"/>
                             </div>
                         </template>
@@ -101,6 +105,7 @@ import '@morioh/v-quill-editor/dist/editor.css';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import MyUploadAdapter from "@/mixins/EditorCustomUpload";
 import TTab from "@/Components/Tab/TTab";
+import { quillEditor } from 'vue3-quill'
 
 export default defineComponent({
     components: {
@@ -111,7 +116,8 @@ export default defineComponent({
         JetLabel,
         TInputText,
         TInputFile,
-        TTab
+        TTab,
+        quillEditor
     },
     props: {
         service: {
@@ -135,10 +141,12 @@ export default defineComponent({
                 head_title: this.item.head_title,
                 sub_text: this.item.sub_text,
                 body_text_head: this.item.body_text_head,
+                body_text_head_delta: this.item.body_text_head_delta,
                 imageBg: this.item?.image_bg_id,
                 imageFirst: this.item?.image_first_id,
                 imageSecond: this.item?.image_second_id,
-                body_text_bottom: this.item.body_text_bottom
+                body_text_bottom: this.item.body_text_bottom,
+                body_text_bottom_delta: this.item.body_text_bottom,
             }),
             editor: ClassicEditor,
             editorConfigData: {},
@@ -153,6 +161,13 @@ export default defineComponent({
                     title: "Bottom",
                 },
             ],
+            content_1: this.item.body_text_head ? this.item.body_text_head.substring(1, this.item.body_text_head.length - 1) : '',
+            content_2: this.item.body_text_bottom ? this.item.body_text_bottom.substring(1, this.item.body_text_bottom.length - 1) : '',
+            editorOption: {
+                debug: 'info',
+                placeholder: 'Compose an epic...',
+                theme: 'snow'
+            }
         }
     },
     methods: {
@@ -167,6 +182,14 @@ export default defineComponent({
                 return new MyUploadAdapter(loader);
             };
         },
+        onBodyHeadChange({quill, html}) {
+            this.form.body_text_head_delta = JSON.stringify(quill.getContents());
+            this.form.body_text_head = JSON.stringify(html);
+        },
+        onBodyBottomChange({quill, html}) {
+            this.form.body_text_bottom_delta = JSON.stringify(quill.getContents());
+            this.form.body_text_bottom = JSON.stringify(html);
+        }
     },
 })
 </script>

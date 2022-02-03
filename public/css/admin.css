@@ -11626,9 +11626,6 @@ select {
   transition-duration: 200ms;
 }
 .tab-content {
-  display: flex;
-  border-width: 1px;
-  padding: 0.5rem;
 }
 .tab-light .tab-content {
   --tw-bg-opacity: 1;

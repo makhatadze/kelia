@@ -144,6 +144,8 @@
           :value="disabled ? '' : modelValue"
           :disabled="disabled || readOnly==='text' || readOnly==='both'"
           @input="$emit('update:modelValue', $event.target.value)"
+          min="0.1"
+          step="0.01"
           ref="input"
       >
     </div>

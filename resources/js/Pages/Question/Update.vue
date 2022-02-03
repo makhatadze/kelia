@@ -83,7 +83,7 @@
                             </div>
                             <div>
                                 <jet-label for="image" value="Image"/>
-                                <t-input-file style="max-height: 40px; max-width: 120px" :default-value="item.image_src" model-name="answer" v-model="item.image"/>
+                                <t-input-file style="max-height: 40px; max-width: 120px" :default-value="item?.image_src" model-name="answer" v-model="item.image"/>
                                 <jet-input-error :message="form.errors[`answerItems.${index}.image`]" class="mt-2"/>
                             </div>
                             <div>
@@ -181,13 +181,14 @@ export default defineComponent({
                         id: el.id,
                         body: el.body,
                         image: el?.image_id,
-                        price: el.price
+                        price: el.price,
+                        image_src: el.image_src
                     }
                     }) : [
                         {
                             body: '',
                             image: null,
-                            price: 0
+                            price: 0,
                         }
                     ]
             }),

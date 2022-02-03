@@ -61,8 +61,8 @@
     <script>
 
         const serviceItem = {!! $serviceItem->toJson() !!};
-        const body_text_head = JSON.parse(serviceItem['body_text_head']);
-        const body_text_bottom = JSON.parse(serviceItem['body_text_bottom']);
+        const body_text_head = JSON.parse(serviceItem['body_text_head_delta']);
+        const body_text_bottom = JSON.parse(serviceItem['body_text_bottom_delta']);
 
 
         const Font = Quill.import('formats/font');
