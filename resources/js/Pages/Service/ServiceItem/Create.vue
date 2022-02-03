@@ -3,62 +3,75 @@
         <form @submit.prevent="submitForm">
             <div class="px-4 py-5 bg-white sm:p-6 shadow"
                  :class="'sm:rounded-tl-md sm:rounded-tr-md'">
-                <div class="grid w-full grid-flow-row gap-4 mb-4 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 justify-items-stretch">
-                    <div class="col-span-6 sm:col-span-4">
-                        <jet-label for="head_title" value="Head Title"/>
-                        <t-input-text
-                            id="headTitle"
-                            v-model="form.head_title"
-                            type="text"
-                        />
-                        <jet-input-error :message="form.errors.head_title" class="mt-2"/>
+                <div class="grid w-full grid-flow-row gap-4 xl:gap-24 mb-4 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 justify-items-stretch">
+                    <div class="flex flex-col gap-4">
+                        <div class="">
+                            <jet-label for="head_title" value="Head Title"/>
+                            <t-input-text
+                                id="headTitle"
+                                v-model="form.head_title"
+                                type="text"
+                            />
+                            <jet-input-error :message="form.errors.head_title" class="mt-2"/>
+                        </div>
+                        <div class="">
+                            <jet-label for="title" value="Title"/>
+                            <t-input-text
+                                id="title"
+                                v-model="form.title"
+                                type="text"
+                            />
+                            <jet-input-error :message="form.errors.title" class="mt-2"/>
+                        </div>
+                        <div class="">
+                            <jet-label for="head_title" value="Sub Text"/>
+                            <t-input-text
+                                id="headTitle"
+                                v-model="form.sub_text"
+                                type="text"
+                            />
+                            <jet-input-error :message="form.errors.sub_text" class="mt-2"/>
+                        </div>
+                        <div class="">
+                            <jet-label for="img_path" value="Background Image"/>
+                            <t-input-file default-value="" model-name="service-item-bg" v-model="form.imageBg" />
+                            <jet-input-error :message="form.errors.imageBg" class="mt-2"/>
+                        </div>
                     </div>
-                    <div class="col-span-6 sm:col-span-4">
-                        <jet-label for="title" value="Title"/>
-                        <t-input-text
-                            id="title"
-                            v-model="form.title"
-                            type="text"
-                        />
-                        <jet-input-error :message="form.errors.title" class="mt-2"/>
+                    <t-tab :data="tab2content" v-model="tab2">
+                        <template #content="{props}">
+                            <div v-if="props.id === 1">
+                                <jet-label for="body_text_head" value="Body text Head"/>
+                                <ckeditor :editor="editor"
+                                          :config="editorConfigData"
+                                          @ready="meyCustomUploadAdapterPlugin($event)"
+                                          v-model="form.body_text_head"></ckeditor>
+                                <jet-input-error :message="form.errors.body_text_head" class="mt-2"/>
+                            </div>
+                            <div v-if="props.id === 2">
+                                <jet-label for="body_text_head" value="Body text bottom"/>
+                                <ckeditor :editor="editor"
+                                          :config="editorConfigData"
+                                          @ready="meyCustomUploadAdapterPlugin($event)"
+                                          v-model="form.body_text_bottom"></ckeditor>
+                                <jet-input-error :message="form.errors.body_text_bottom" class="mt-2"/>
+                            </div>
+                        </template>
+                    </t-tab>
+                    <div class="flex items-center justify-center">
+                        <div class="col-span-6 sm:col-span-4">
+                            <jet-label for="img_path" value="First Image"/>
+                            <t-input-file style="max-height: 320px; max-width: 420px" default-value="" model-name="service-item-first" v-model="form.imageFirst" />
+                            <jet-input-error :message="form.errors.imageFirst" class="mt-2"/>
+                        </div>
                     </div>
-                    <div class="col-span-6 sm:col-span-4">
-                        <jet-label for="head_title" value="Sub Text"/>
-                        <t-input-text
-                            id="headTitle"
-                            v-model="form.sub_text"
-                            type="text"
-                        />
-                        <jet-input-error :message="form.errors.sub_text" class="mt-2"/>
+                    <div class="flex items-center justify-center">
+                        <div class="col-span-6 sm:col-span-4">
+                            <jet-label for="img_path" value="Second Image"/>
+                            <t-input-file style="max-height: 320px; max-width: 420px" default-value="" model-name="service-item-second" v-model="form.imageSecond" />
+                            <jet-input-error :message="form.errors.imageSecond" class="mt-2"/>
+                        </div>
                     </div>
-                    <div class="col-span-6 sm:col-span-4">
-                        <jet-label for="img_path" value="Background Image"/>
-                        <t-input-file default-value="" model-name="service-item-bg" v-model="form.imageBg" />
-                        <jet-input-error :message="form.errors.imageBg" class="mt-2"/>
-                    </div>
-                    <div class="col-span-6">
-                        <jet-label for="body_text_head" value="Body text head"/>
-                        <jet-input-error :message="form.errors.body_text_head" class="mt-2"/>
-                    </div>
-                    <div class="col-span-6 sm:col-span-4">
-                        <jet-label for="img_path" value="First Image"/>
-                        <t-input-file default-value="" model-name="service-item-first" v-model="form.imageFirst" />
-                        <jet-input-error :message="form.errors.imageFirst" class="mt-2"/>
-                    </div>
-                    <div class="col-span-6 sm:col-span-4">
-                        <jet-label for="img_path" value="Second Image"/>
-                        <t-input-file default-value="" model-name="service-item-second" v-model="form.imageSecond" />
-                        <jet-input-error :message="form.errors.imageSecond" class="mt-2"/>
-                    </div>
-                    <div class="col-span-6">
-                        <jet-label for="body_text_head" value="Body text bottom"/>
-                        <ckeditor :editor="editor"
-                                  :config="editorConfigData"
-                                  @ready="meyCustomUploadAdapterPlugin($event)"
-                                  v-model="form.body_text_bottom"></ckeditor>
-                        <jet-input-error :message="form.errors.body_text_bottom" class="mt-2"/>
-                    </div>
-
                 </div>
             </div>
             <div
@@ -86,7 +99,7 @@ import TInputText from "@/Components/Form/Inputs/TInputText";
 import TInputFile from "@/Components/Form/Inputs/TInputFile";
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import MyUploadAdapter from "@/mixins/EditorCustomUpload";
-
+import TTab from "@/Components/Tab/TTab";
 export default defineComponent({
     components: {
         AppLayout,
@@ -96,6 +109,7 @@ export default defineComponent({
         JetLabel,
         TInputText,
         TInputFile,
+        TTab
     },
     props: {
         service: {
@@ -120,6 +134,18 @@ export default defineComponent({
             }),
             editor: ClassicEditor,
             editorConfigData: {},
+            tab2: 1,
+            tab2content: [
+                {
+                    id: 1,
+                    title: "Top",
+                },
+                {
+                    id: 2,
+                    title: "Bottom",
+                },
+            ],
+
         }
     },
     methods: {
