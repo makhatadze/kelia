@@ -42,18 +42,23 @@
                         <template #content="{props}">
                             <div v-if="props.id === 1">
                                 <jet-label for="body_text_head" value="Body text Head"/>
-                                <ckeditor :editor="editor"
-                                          :config="editorConfigData"
-                                          @ready="meyCustomUploadAdapterPlugin($event)"
-                                          v-model="form.body_text_head"></ckeditor>
+                                <quill-editor
+                                    ref="editor"
+                                    content-type="delta"
+                                    v-model:value="content_1"
+                                    @change="onBodyHeadChange($event)"
+                                    :options="editorOption"
+                                />
                                 <jet-input-error :message="form.errors.body_text_head" class="mt-2"/>
                             </div>
                             <div v-if="props.id === 2">
                                 <jet-label for="body_text_head" value="Body text bottom"/>
-                                <ckeditor :editor="editor"
-                                          :config="editorConfigData"
-                                          @ready="meyCustomUploadAdapterPlugin($event)"
-                                          v-model="form.body_text_bottom"></ckeditor>
+                                <quill-editor
+                                    v-model:value="form.content_2"
+                                    :options="editorOption"
+                                    content-type="delta"
+                                    @change="onBodyBottomChange($event)"
+                                />
                                 <jet-input-error :message="form.errors.body_text_bottom" class="mt-2"/>
                             </div>
                         </template>
@@ -100,6 +105,8 @@ import TInputFile from "@/Components/Form/Inputs/TInputFile";
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import MyUploadAdapter from "@/mixins/EditorCustomUpload";
 import TTab from "@/Components/Tab/TTab";
+import { quillEditor } from 'vue3-quill'
+
 export default defineComponent({
     components: {
         AppLayout,
@@ -109,7 +116,8 @@ export default defineComponent({
         JetLabel,
         TInputText,
         TInputFile,
-        TTab
+        TTab,
+        quillEditor
     },
     props: {
         service: {
@@ -127,6 +135,7 @@ export default defineComponent({
                 head_title: '',
                 sub_text: '',
                 body_text_head: '',
+                delta: null,
                 imageBg: '',
                 imageFirst: '',
                 imageSecond: '',
@@ -135,6 +144,8 @@ export default defineComponent({
             editor: ClassicEditor,
             editorConfigData: {},
             tab2: 1,
+            content_1 : '',
+            content_2: '',
             tab2content: [
                 {
                     id: 1,
@@ -145,13 +156,13 @@ export default defineComponent({
                     title: "Bottom",
                 },
             ],
-
+            content: '<h2>I am Example</h2>',
+            editorOption: {
+                // Some Quill options...
+            }
         }
     },
     methods: {
-        onEditorChange(event) {
-            console.log(event)
-        },
         submitForm() {
             this.form.post(route('service-item.store',this.service.id), {
                 preserveScroll: true,
@@ -164,11 +175,12 @@ export default defineComponent({
                 return new MyUploadAdapter(loader);
             };
         },
+        onBodyHeadChange(event) {
+            this.form.body_text_head = JSON.stringify(event.quill.getContents());
+        },
+        onBodyBottomChange(event) {
+            this.form.body_text_bottom = JSON.stringify(event.quill.getContents());
+        }
     },
-    computed: {
-    },
-    mounted() {
-        console.log('this is current quill instance object', this.editor)
-    }
 })
 </script>
