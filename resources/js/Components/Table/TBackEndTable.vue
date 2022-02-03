@@ -400,7 +400,7 @@
                     v-model="activePage"
                     :jump="paginationJump"
                     :total="content.total ? content.total : content.meta.total"
-                    :range="5"
+                    :range="15"
                     :radius="radius"
                     :per-page-item="Number(content.per_page ? content.per_page : content.meta.per_page)"
                     :previous-text="paginationPreviousText"
@@ -572,7 +572,7 @@ export default defineComponent({
         },
         perPage: {
             type: Number,
-            default: 5
+            default: 15
         },
         design: {
             type: String,
@@ -620,7 +620,7 @@ export default defineComponent({
         },
         paginationRange: {
             type: Number,
-            default: 5
+            default: 15
         },
         paginationJump: {
             type: Boolean,
@@ -778,7 +778,7 @@ export default defineComponent({
 
         /*Calculate Items in Per Page Select Data*/
         const dynamicPerPageRange = computed(() => {
-            let rowCounts = [5, 15, 25, 50, 75, 100];
+            let rowCounts = [15, 25, 50, 75, 100];
             let list = [];
             rowCounts.forEach(item => {
                 if (content.value['total'] ? content.value['total'] : content.value['meta'].total > item) {

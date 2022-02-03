@@ -80,7 +80,7 @@
             </div>
         </div>
         <!--Notifications-->
-        <top-menu-notification/>
+<!--        <top-menu-notification/>-->
         <!--Theme Selector-->
         <top-menu-theme-selector/>
         <!--Language Selector-->

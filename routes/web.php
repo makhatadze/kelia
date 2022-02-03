@@ -140,6 +140,13 @@ Route::prefix('admin')->group(function () {
             Route::delete('{contact}',[ContactController::class,'destroy'])->name('contact.destroy');
         });
 
+        // ContentText routes
+        Route::prefix('chiffrage')->group(function () {
+            Route::match(['get','post'],'', [\App\Http\Controllers\Admin\ChiffrageController::class, 'index'])->name('chiffrage.index');
+
+            Route::delete('{chiffrage}',[\App\Http\Controllers\Admin\ChiffrageController::class,'destroy'])->name('chiffrage.destroy');
+        });
+
         // Packet routes
         Route::prefix('packet')->group(function () {
             Route::match(['get','post'],'', [PacketController::class, 'index'])->name('packet.index');

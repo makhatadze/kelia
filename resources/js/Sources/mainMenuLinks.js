@@ -80,6 +80,13 @@ export default function () {
                 type: "route",
             },
             {
+                id: "Chiffrage",
+                label:  "Chiffrage immédiat",
+                icon: "table",
+                link: "chiffrage.index",
+                type: "route",
+            },
+            {
                 id: "Packet",
                 label:  "Packet",
                 icon: "edit",
