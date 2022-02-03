@@ -20,6 +20,7 @@ use App\Models\User;
 use App\Services\ImageUploadService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -73,7 +74,9 @@ class QuestionSectionController extends Controller
         $model->section_id = $request->input('section_id');
         $model->save();
 
-        return redirect()->back()->with('message', 'Yay it worked');
+
+        Session::flash('toastr', ['type' => 'solid-green', 'position' => 'rt','content' => '<b>'.$model->body. '</b> created']);
+        return redirect()->back();
     }
 
 
@@ -116,7 +119,8 @@ class QuestionSectionController extends Controller
         $model->section_id = $request->input('section_id');
         $model->save();
 
-        return redirect()->route('question-section.index')->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'solid-green', 'position' => 'rt','content' => '<b>'.$model->body. '</b> updated']);
+        return redirect()->back();
     }
 
     /**
@@ -132,6 +136,7 @@ class QuestionSectionController extends Controller
 
         $model->delete();
 
-        return redirect()->route('question-section.index')->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'gradient-red-to-pink', 'position' => 'rt','content' => '<b>'.$id. '</b> deleted']);
+        return redirect()->back();
     }
 }

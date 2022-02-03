@@ -96,7 +96,6 @@ export default defineComponent({
             this.form.post(route('content-image.update',this.contentImage.id), {
                 preserveScroll: true,
                 forceFormData: true,
-                onSuccess: () => (this.form.reset('tag','section','img_path')),
             });
         },
     },

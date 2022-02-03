@@ -33,7 +33,7 @@
                 </t-button>
             </template>
             <template #footer-right>
-                <form id="delete" @submit.prevent="deleteItem">
+                <form id="delete" @submit.prevent="deleteItem(service.id)">
 
                     <t-button
                         design="light"
@@ -75,7 +75,7 @@ export default {
         service: {
             type: Object,
             default() {
-                return null
+                return {}
             }
         },
         data: {
@@ -103,7 +103,9 @@ export default {
             }
         },
     },
-    setup() {
+    setup(props) {
+        const { service } = toRefs(props);
+
         const showModal = ref(false);
         const modalContent = ref(null);
         const selectedItem = ref(null);
@@ -127,10 +129,9 @@ export default {
             }
 
         }
-
-        const deleteItem = ()=> {
+        const deleteItem = (serviceId)=> {
             form.id = selectedItem.value;
-            form.delete(route('service.destroy', selectedItem.value), {
+            form.delete(route('service-item.destroy', [serviceId, selectedItem.value]), {
                 preserveScroll: true,
                 onSuccess: () => showModal.value = false,
             })

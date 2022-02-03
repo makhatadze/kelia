@@ -109,7 +109,6 @@ export default defineComponent({
             this.form.post(route('content-text.update',this.item.id), {
                 preserveScroll: true,
                 forceFormData: true,
-                onSuccess: () => (this.form.reset('title','tag','section','text_type')),
             });
         },
     },

@@ -12,6 +12,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ServiceRequest;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -56,6 +57,7 @@ class ServiceController extends Controller
         $model->title = $request->input('title');
         $model->save();
 
+        Session::flash('toastr', ['type' => 'solid-green', 'position' => 'rt','content' => '<b>'.$model->title. '</b> created']);
         return redirect()->route('service.index')->with('message', 'Yay it worked');
     }
 
@@ -88,7 +90,8 @@ class ServiceController extends Controller
         $model->title = $request->input('title');
         $model->save();
 
-        return redirect()->route('service.index')->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'solid-green', 'position' => 'rt','content' => '<b>'.$model->title. '</b> updated']);
+        return redirect()->back();
     }
 
     /**
@@ -103,6 +106,7 @@ class ServiceController extends Controller
         $model = Service::findOrFail($id);
         $model->delete();
 
-        return redirect()->route('service.index')->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'gradient-red-to-pink', 'position' => 'rt','content' => '<b>'.$id. '</b> deleted']);
+        return redirect()->back();
     }
 }

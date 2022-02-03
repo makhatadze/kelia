@@ -6,6 +6,7 @@
  * Time: 18:18
  * @author Vito Makhatadze <vitomakhatadze@gmail.com>
  */
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -15,6 +16,7 @@ use App\Models\ContentText;
 use App\Models\Image;
 use App\Models\Packet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -30,8 +32,8 @@ class PacketController extends Controller
      */
     public function index(Request $request): Response
     {
-        return Inertia::render('Packet/Index',[
-            'data'=> Packet::tableSearch($request->input('searchObj')),
+        return Inertia::render('Packet/Index', [
+            'data' => Packet::tableSearch($request->input('searchObj')),
         ]);
     }
 
@@ -42,7 +44,7 @@ class PacketController extends Controller
      */
     public function create(): Response
     {
-        return Inertia::render('Packet/Create',[
+        return Inertia::render('Packet/Create', [
         ]);
     }
 
@@ -71,8 +73,8 @@ class PacketController extends Controller
             $imageModel->save();
         }
 
-
-        return redirect()->back()->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'solid-green', 'position' => 'rt', 'content' => '<b>' . $model->id . '</b> created']);
+        return redirect()->back();
 
     }
 
@@ -80,14 +82,14 @@ class PacketController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      *
      * @return \Inertia\Response
      */
     public function edit(int $id): Response
     {
         $packet = Packet::with('items')->findOrFail($id);
-        return Inertia::render('Packet/Update',[
+        return Inertia::render('Packet/Update', [
             'item' => $packet,
         ]);
     }
@@ -123,7 +125,8 @@ class PacketController extends Controller
         $model->items()->delete();
         $model->items()->createMany($request->input('packetItems'));
 
-        return redirect()->back()->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'solid-green', 'position' => 'rt', 'content' => '<b>' . $model->id . '</b> updated']);
+        return redirect()->back();
     }
 
     /**
@@ -138,6 +141,7 @@ class PacketController extends Controller
         $model = Packet::findOrFail($id);
         $model->delete();
 
-        return redirect()->back()->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'gradient-red-to-pink', 'position' => 'rt', 'content' => '<b>' . $id . '</b> deleted']);
+        return redirect()->back();
     }
 }

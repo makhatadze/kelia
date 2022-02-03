@@ -18,6 +18,7 @@ use App\Models\User;
 use App\Services\ImageUploadService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -71,7 +72,8 @@ class ContentTextController extends Controller
         $model->text_type = $request->input('text_type');
         $model->save();
 
-        return redirect()->route('content-text.index')->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'solid-green', 'position' => 'rt','content' => '<b>'.$model->id. '</b> created']);
+        return redirect()->back();
     }
 
 
@@ -100,15 +102,17 @@ class ContentTextController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(ContentTextRequest $request, ContentText $model): \Illuminate\Http\RedirectResponse
+    public function update(ContentTextRequest $request, int $id): \Illuminate\Http\RedirectResponse
     {
+        $model = ContentText::findOrFail($id);
         $model->title = $request->input('title');
         $model->tag = $request->input('tag');
         $model->section = $request->input('section');
         $model->text_type = $request->input('text_type');
         $model->save();
 
-        return redirect()->route('content-text.index')->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'solid-green', 'position' => 'rt','content' => '<b>'.$model->id. '</b> updated']);
+        return redirect()->back();
     }
 
     /**
@@ -123,6 +127,7 @@ class ContentTextController extends Controller
         $model = ContentText::findOrFail($id);
         $model->delete();
 
-        return redirect()->back()->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'gradient-red-to-pink', 'position' => 'rt','content' => '<b>'.$id. '</b> deleted']);
+        return redirect()->back();
     }
 }

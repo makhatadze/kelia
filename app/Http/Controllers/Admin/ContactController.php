@@ -19,6 +19,7 @@ use App\Models\User;
 use App\Services\ImageUploadService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -46,10 +47,11 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Contact $model): \Illuminate\Http\RedirectResponse
+    public function destroy(int $id): \Illuminate\Http\RedirectResponse
     {
+        $model = Contact::findOrFail($id);
         $model->delete();
-
-        return redirect()->route('content-text.index')->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'gradient-red-to-pink', 'position' => 'rt','content' => '<b>'.$model->id. '</b> deleted']);
+        return redirect()->back();
     }
 }

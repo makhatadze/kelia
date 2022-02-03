@@ -106,7 +106,7 @@ export default {
 
         const deleteItem = ()=> {
             form.id = selectedItem.value;
-            form.delete(route('content-text.destroy', selectedItem.value), {
+            form.delete(route('contact.destroy', selectedItem.value), {
                 preserveScroll: true,
                 onSuccess: () => showModal.value = false,
             })

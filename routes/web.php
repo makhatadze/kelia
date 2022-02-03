@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\ServiceItemController;
 use App\Http\Controllers\Client\ContactUsController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\UserController;
+use App\Models\Question;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -73,11 +74,8 @@ Route::prefix('admin')->group(function () {
 
     Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get('/', function () {
-            return Inertia::render('Dashboard', [
-                'canLogin' => Route::has('login'),
-                'canRegister' => Route::has('register'),
-                'laravelVersion' => Application::VERSION,
-                'phpVersion' => PHP_VERSION,
+            return Inertia::render('Question/Index',[
+                'data'=> Question::tableSearch(null),
             ]);
         })->name('/');
 
@@ -108,6 +106,7 @@ Route::prefix('admin')->group(function () {
             Route::post('{service}/items/store',[ServiceItemController::class,'store'])->name('service-item.store');
             Route::get('{service}/items/{serviceItem}/edit',[ServiceItemController::class,'edit'])->name('service-item.edit');
             Route::put('{service}/items/{serviceItem}',[ServiceItemController::class,'update'])->name('service-item.update');
+            Route::delete('{service}/items/{serviceItem}',[ServiceItemController::class,'destroy'])->name('service-item.destroy');
 
         });
 

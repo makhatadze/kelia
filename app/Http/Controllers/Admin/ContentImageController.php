@@ -16,6 +16,7 @@ use App\Models\User;
 use App\Services\ImageUploadService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -82,8 +83,9 @@ class ContentImageController extends Controller
         // save image
         $imageModel->imageable()->associate($contentImage);
         $imageModel->save();
+        Session::flash('toastr', ['type' => 'solid-green', 'position' => 'rt','content' => '<b>'.$contentImage->id. '</b> created']);
 
-        return redirect()->route('content-image.index')->with('message', 'Yay it worked');
+        return redirect()->back();
     }
 
 
@@ -109,7 +111,7 @@ class ContentImageController extends Controller
      * @param \App\Http\Requests\ContentImageRequest $request
      * @param \App\Models\ContentImage $contentImage
      *
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(ContentImageRequest $request, ContentImage $contentImage)
     {
@@ -125,7 +127,8 @@ class ContentImageController extends Controller
             $imageModel->save();
         }
 
-        return redirect()->route('content-image.index')->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'solid-green', 'position' => 'rt','content' => '<b>'.$contentImage->id. '</b> updated']);
+        return redirect()->back();
     }
 
     /**
@@ -140,6 +143,8 @@ class ContentImageController extends Controller
         $contentImage = ContentImage::findOrFail($id);
         $contentImage->delete();
 
-        return redirect()->back()->with('message', 'Yay it worked');
+
+        Session::flash('toastr', ['type' => 'gradient-red-to-pink', 'position' => 'rt','content' => '<b>'.$id. '</b> deleted']);
+        return redirect()->back();
     }
 }

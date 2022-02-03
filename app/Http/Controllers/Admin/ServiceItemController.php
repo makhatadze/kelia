@@ -16,6 +16,7 @@ use App\Models\Service;
 use App\Models\ServiceItem;
 use App\Services\ImageUploadService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -105,8 +106,8 @@ class ServiceItemController extends Controller
         }
 
 
-
-        return redirect()->back()->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'solid-green', 'position' => 'rt','content' => '<b>'.$model->title. '</b> created']);
+        return redirect()->back();
     }
 
 
@@ -174,21 +175,24 @@ class ServiceItemController extends Controller
             }
         }
 
-        return redirect()->back()->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'solid-green', 'position' => 'rt','content' => '<b>'.$model->title. '</b> updated']);
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
+     * @param int $serviceId
      * @param int $id
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(int $id): \Illuminate\Http\RedirectResponse
+    public function destroy(int $serviceId,int $id): \Illuminate\Http\RedirectResponse
     {
-        $model = Service::findOrFail($id);
+        $model = ServiceItem::findOrFail($id);
         $model->delete();
 
-        return redirect()->route('service.index')->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'gradient-red-to-pink', 'position' => 'rt','content' => '<b>'.$id. '</b> deleted']);
+        return redirect()->back();
     }
 }

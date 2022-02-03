@@ -17,6 +17,7 @@ use App\Models\Packet;
 use App\Models\Question;
 use App\Models\QuestionSection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -109,8 +110,8 @@ class QuestionController extends Controller
             $imageModel->save();
         }
 
-
-        return redirect()->back()->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'solid-green', 'position' => 'rt','content' => '<b>'.$model->body. '</b> created']);
+        return redirect()->back();
 
     }
 
@@ -243,7 +244,8 @@ class QuestionController extends Controller
             }
         }
 
-        return redirect()->back()->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'solid-green', 'position' => 'rt','content' => '<b>'.$model->body. '</b> updated']);
+        return redirect()->back();
     }
 
     /**
@@ -258,6 +260,7 @@ class QuestionController extends Controller
         $model = Packet::findOrFail($id);
         $model->delete();
 
-        return redirect()->back()->with('message', 'Yay it worked');
+        Session::flash('toastr', ['type' => 'gradient-red-to-pink', 'position' => 'rt','content' => '<b>'.$id. '</b> deleted']);
+        return redirect()->back();
     }
 }

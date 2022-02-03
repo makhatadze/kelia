@@ -440,7 +440,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 mt-2" v-if="finished">
+                <div class="col-12 mt-2" v-if="finished && answers.length">
                     <hr style="background-color: var(--root-green)">
                     <div class="d-flex align-items-center">
                         <p style="color: var(--root-green)" class="m-0">
@@ -884,6 +884,7 @@
                             })
                         }
                         this.total = total;
+                        this.finished = false
                     }
                 }
             }

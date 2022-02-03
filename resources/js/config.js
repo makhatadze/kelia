@@ -1,5 +1,5 @@
 const appConf = {
-    appName: 'Anemon',
+    appName: 'Kelia',
     darkLogo: '/img/dark-logo.svg',
     lightLogo: '/img/light-logo.svg',
     logoAreaClasses: null,
@@ -58,19 +58,11 @@ const topBarConf = {
 const footerConf = {
     visible: true,
     content: "<a\n" +
-        "              class=\"text-blue-600 hover:underline\"\n" +
-        "              href=\"https://anemon.tailadmin.dev/\"\n" +
-        "              target=\"_blank\"\n" +
-        "            >\n" +
-        "              Anemon v.0.0.1\n" +
-        "              </a>\n" +
-        "            <span>by</span>\n" +
-        "            <a\n" +
         "              class=\"text-teal-400 hover:underline\"\n" +
-        "              href=\"https://github.com/sinan-aydogan\"\n" +
+        "              href=\"https://webapp.ge/\"\n" +
         "              target=\"_blank\"\n" +
         "            >\n" +
-        "              Sinan AYDOĞAN\n" +
+        "              Webapp\n" +
         "            </a>"
 }
 

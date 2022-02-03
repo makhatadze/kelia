@@ -62,7 +62,7 @@ export default defineComponent({
             this.form.post(route('service.store'), {
                 preserveScroll: true,
                 forceFormData: true,
-                onSuccess: () => (this.form.reset('title')),
+                onSuccess: () => (this.form.reset()),
             });
         },
     },

@@ -68,8 +68,7 @@ export default defineComponent({
         submitForm() {
             this.form.post(route('service.update',this.item.id), {
                 preserveScroll: true,
-                forceFormData: true,
-                onSuccess: () => (this.form.reset('title')),
+                forceFormData: true
             });
         },
     },
