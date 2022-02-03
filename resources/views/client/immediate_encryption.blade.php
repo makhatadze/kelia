@@ -1000,7 +1000,7 @@
                             .catch(err => console.dir(err))
                             .finally(() => {
                                 this.loadingDownload = false
-                                // this.redirectToHome();
+                                this.redirectToHome();
                             });
                     }
 
@@ -1011,7 +1011,7 @@
                             .catch(err => console.dir(err))
                             .finally(() => {
                                 this.loadingSend = false;
-                                // this.redirectToHome();
+                                this.redirectToHome();
                             });
                     }
                 }

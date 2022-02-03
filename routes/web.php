@@ -29,9 +29,6 @@ use Spatie\Permission\Models\Role;
 |
 */
 
-Route::get('test',function () {
-    return view('components.pdf.chiffrage_2');
-});
 
 Route::get('/', [HomeController::class, 'index'])->name('main');
 Route::get('page/{id}', [\App\Http\Controllers\Client\ServiceController::class, 'page'])->name('page');
@@ -42,13 +39,13 @@ Route::get('immediate/{path}', [HomeController::class, 'immediateEncryption'])->
 Route::post('contactus', [ContactUsController::class, 'storeClient'])->name('contactus_store');
 
 
-Route::middleware('guest_client')->group(function () {
-    Route::get('/login', [UserController::class, 'loginPage'])->name('login_client_page');
-    Route::post('/login', [UserController::class, 'login'])->name('login_auth');
-    Route::get('/register', [UserController::class, 'registerPage'])->name('register_client_page');
-    Route::post('/register', [UserController::class, 'register'])->name('register_auth');
-});
-
+//Route::middleware('guest_client')->group(function () {
+//    Route::get('/login', [UserController::class, 'loginPage'])->name('login_client_page');
+//    Route::post('/login', [UserController::class, 'login'])->name('login_auth');
+//    Route::get('/register', [UserController::class, 'registerPage'])->name('register_client_page');
+//    Route::post('/register', [UserController::class, 'register'])->name('register_auth');
+//});
+//
 Route::middleware('auth_client')->group(function () {
     Route::get('/profile', [UserController::class, 'profile'])->name('client_profile');
     Route::post('/signout', [UserController::class, 'signOut'])->name('signout_client');

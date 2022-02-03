@@ -91,56 +91,56 @@
                                             </a>
                                         </li>
 
-                                        @if (\Illuminate\Support\Facades\Auth::check())
-                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1007">
-                                                <a href="#" class="elementor-item elementor-item-anchor">
-                                                    Profile
-                                                </a>
+{{--                                        @if (\Illuminate\Support\Facades\Auth::check())--}}
+{{--                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1007">--}}
+{{--                                                <a href="#" class="elementor-item elementor-item-anchor">--}}
+{{--                                                    Profile--}}
+{{--                                                </a>--}}
 
-                                                <ul class="sub-menu elementor-nav-menu--dropdown">
-                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-906">
-                                                        <a href="{{route('client_profile')}}"
-                                                           class="elementor-sub-item">
-                                                            {{ \Illuminate\Support\Facades\Auth::user()->name }}
-                                                        </a>
-                                                    </li>
+{{--                                                <ul class="sub-menu elementor-nav-menu--dropdown">--}}
+{{--                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-906">--}}
+{{--                                                        <a href="{{route('client_profile')}}"--}}
+{{--                                                           class="elementor-sub-item">--}}
+{{--                                                            {{ \Illuminate\Support\Facades\Auth::user()->name }}--}}
+{{--                                                        </a>--}}
+{{--                                                    </li>--}}
 
-                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-906">
-                                                        <a class="elementor-sub-item"
-                                                           href="#"
-                                                           onclick="event.preventDefault(); document.getElementById('logout-form').submit()"
-                                                        >
-                                                            Signout
-                                                        </a>
+{{--                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-906">--}}
+{{--                                                        <a class="elementor-sub-item"--}}
+{{--                                                           href="#"--}}
+{{--                                                           onclick="event.preventDefault(); document.getElementById('logout-form').submit()"--}}
+{{--                                                        >--}}
+{{--                                                            Signout--}}
+{{--                                                        </a>--}}
 
-                                                        <form method="POST" id="logout-form"
-                                                              action="{{ route('signout_client') }}">
-                                                            @csrf
-                                                        </form>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        @else
-                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1007">
-                                                <a href="#" class="elementor-item elementor-item-anchor">
-                                                    <i class="far fa-user" style="padding-top: 5px"></i>
-                                                </a>
+{{--                                                        <form method="POST" id="logout-form"--}}
+{{--                                                              action="{{ route('signout_client') }}">--}}
+{{--                                                            @csrf--}}
+{{--                                                        </form>--}}
+{{--                                                    </li>--}}
+{{--                                                </ul>--}}
+{{--                                            </li>--}}
+{{--                                        @else--}}
+{{--                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1007">--}}
+{{--                                                <a href="#" class="elementor-item elementor-item-anchor">--}}
+{{--                                                    <i class="far fa-user" style="padding-top: 5px"></i>--}}
+{{--                                                </a>--}}
 
-                                                <ul class="sub-menu elementor-nav-menu--dropdown">
-                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1679">
-                                                        <a href="{{route('register_client_page')}}"
-                                                           class="elementor-item">
-                                                            register
-                                                        </a>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1679">
-                                                        <a href="{{route('login_client_page')}}" class="elementor-item">
-                                                            sign in
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        @endif
+{{--                                                <ul class="sub-menu elementor-nav-menu--dropdown">--}}
+{{--                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1679">--}}
+{{--                                                        <a href="{{route('register_client_page')}}"--}}
+{{--                                                           class="elementor-item">--}}
+{{--                                                            register--}}
+{{--                                                        </a>--}}
+{{--                                                    </li>--}}
+{{--                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1679">--}}
+{{--                                                        <a href="{{route('login_client_page')}}" class="elementor-item">--}}
+{{--                                                            sign in--}}
+{{--                                                        </a>--}}
+{{--                                                    </li>--}}
+{{--                                                </ul>--}}
+{{--                                            </li>--}}
+{{--                                        @endif--}}
                                     </ul>
                                 </nav>
 
